@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{去掉默认的边距
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        margin: 0 auto;上下边距为0，左右水平居中。   
+        有定位时的居中：position: absolute;
+                       top:0;
+                       left:50%;
+                       margin-left:-565px;  
+    }
+    
+    li{标签选择器
+      list-style: none;列表展示样式 无
+      color: #00ff00十六进制表示字体颜色   red 英文字母表示颜色 rgb(111,200,101)三原色表示颜色
+                                                             rgb(111,200,101,0.3);0.3表示透明度
+    }
+    .ul1{将列表标签位置变动
+    margin: 0;   外边距（为0后对上边还有距离，因为自身有8边距）
+    padding: 0;  padding表示内边距 向左缩进
+    border:1px solid #000;       border 表示边框
+    }
+    .ul1.li1{组合选择器
+        font-size: 50px; 文本大小
+    }
+    #li2{
+        font-size: 70px;
+    }
+</style>
+<body>
+    <ul>
+       <li>1</li>
+       <li>2</li>
+       <li>3</li> 
+    </ul>
+    <ul class="ul1">类选择器
+        <li class="li1">1</li> class可以重名 对应. 
+        <li id="li2">2</li>  id不可以重名 对应#号
+        <li>3</li> 
+     </ul>
+    
+</body>
+</html>

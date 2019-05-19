@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .d1{
+        height: 600px;
+        margin: 0 auto;
+    }
+    .child1{
+        width: 90px;
+        height: 150px;
+        background-color: blue;
+        transition: all 1s ease;
+        margin: 150px 300px; 
+        transform: rotate(45deg);
+        position: absolute;
+    }
+    .child1:hover{
+        transform: rotate(90deg) scale(2);
+    }
+    .child2{
+        width: 90px;
+        height: 150px;
+        background-color: red;
+        transition: all 1s ease;
+        margin: 150px 300px;
+        transform: rotate(-45deg);
+        position: absolute;
+    }
+    .child2:hover{
+        transform: rotate(-90deg) scale(2) translateZ(100px);
+           
+    }
+
+  
+</style>
+<body>
+    <div class="d1">
+        <div class="child1">
+        </div>
+        <div class="child2"></div>
+    </div>
+    
+</body>
+</html>
