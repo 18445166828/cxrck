@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+  var a="a";
+  console.log(typeof a);
+//   if(typeof a =="number"){
+//       console.log("这是一个数值型");
+//   }
+//   if(typeof a =="string"){
+//       console.log("这是一个字符型");
+//   }
+
+// if(typeof a =="number"){
+//     console.log("这是一个数值型");
+// }else{
+//     console.log("这是一个字符型");
+// }
+
+if(typeof a =="number"){
+    console.log("这是一个数值型");
+}else if(typeof a =="string"){
+    console.log("这是一个字符型");
+}else{
+    console.log("这是一个布尔型");
+}
+
+if(1){//0、""、undefined为假
+  console.log("come")
+}
+ 
+ var text;
+ var str = text?"可用":"不可用";
+ console.log(str);
+
+
+var num=3;
+switch(num){
+    case 1:console.log("这是1"); break;
+    case 2:console.log("这是2"); break;
+    case 3:console.log("这是3"); break;
+    case 4:console.log("这是4"); break;
+    case 5:console.log("这是5"); break;
+    case 6:console.log("这是6"); break;
+    default:console.log("没有数字");
+}
+
+if(1==="1"){//三个等号表示恒等
+ console.log("ok");
+}
+
+str='hello'+"wor'd!";
+console.log(str);
+
+  </script>  
+</body>
+</html>

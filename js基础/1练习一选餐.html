@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+       var num;
+       var name1=new Array();
+      var xuanze=window.confirm("是否选择午餐？");
+      if(xuanze){
+         var num=window.prompt("几个人吃？");
+        if(num){
+            for(var i=0;i<num;i++){
+              var a;
+              a=window.prompt("第"+(i+1)+"个人叫什么？" );
+              name1.push(a);
+            }
+            for(var j=0;j<num;j++){
+               var lunch=foo();
+               alert(name1[j]+"吃"+lunch);
+              }        
+         }
+      }else{
+         alert("不吃！");
+       } 
+
+       function foo(){
+              var random=Math.random();
+              random*=10;
+              random=Math.floor(random);
+              switch(random){
+                 case 1:return "凉菜";
+                 case 2:return "包子";
+                 case 3:return "饺子";
+                 case 4:return "粥";
+                 case 5:return "面条";
+                 case 6:return "面条";
+                 case 7:return "面条";
+                 case 8:return "面条";
+                 case 9:return "不吃了";
+              }
+              
+       }
+      
+
+   </script> 
+</body>
+</html>
