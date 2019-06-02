@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// 根据用户输入的数值，计算其平方、平方根和自然对数。
+    var x=window.prompt("输入一个数","");
+    var a=x*x;
+    var b=Math.sqrt(x);
+    var c=Math.log(x);
+    alert("它的平方是"+a);
+    alert("它的平方根是"+b);
+    alert("它的对数是"+c);
+    
+    
+    
+    
+// 使用Math对象的random()方法编制一个产生0~100之间（含0,100）的随机整数的函数   
+function foo(){
+    var num=Math.random();
+    num*=101;
+    var a=Math.floor(num);
+    return a;
+}
+foo();
+console.log(foo());
+
+
+
+// 在页面上显示信息“现在是XXXX年XX月XX日Xx点XX分XX秒（星期X)，欢迎您的到访！
+var today=new Date();
+var year=today.getFullYear();
+var month=today.getMonth()+1;
+var day=today.getDate();
+var hours=today.getHours();
+var minutes=today.getMinutes();
+var seconds=today.getSeconds();
+var week=today.getDay();
+console.log("现在是"+year+"年"+month+"月"+day+"日"+hours+"点"+minutes+"分"+seconds+"秒（星期"+week+")，欢迎您的到访！");
+
+
+var str="";
+var s="";
+function CollectDigits(s){
+for(var i=0;i<=s.length;i++){
+    if(s[i]>='0'&&s[i]<='9'){
+        str+=s[i];
+   }
+ }
+  return str; 
+}
+CollectDigits(s);
+console.log(CollectDigits("1abc23def4"));
+
+
+    </script>
+</body>
+</html>

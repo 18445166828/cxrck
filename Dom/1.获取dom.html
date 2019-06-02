@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<!-- Bom的子集，Dom是整个html文档 -->
+<style>
+
+</style>
+<body>
+    <div id="box">hello</div>
+    <ul>
+        <li class="List">1</li>
+        <li class="List">2</li>
+        <li class="List">3</li>
+    </ul>
+    <script>
+//id选择器
+    var oBox=document.getElementById("box");
+    console.log(oBox);
+    
+
+//class选择器
+     var aList=document.getElementsByClassName("List");
+     console.log(aList);
+
+//标签选择器 li
+     var aList=document.getElementsByTagName("li");
+     console.log(aList);
+     
+
+    </script>
+</body>
+</html>

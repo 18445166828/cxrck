@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // Bom指浏览器 滚动条之类的
+    //定时触发效果
+
+    //执行一次
+    var timer1=setTimeout(function(){
+        alert("hello");
+    },2000/*2秒*/);
+    clearInterval(timer1);
+    
+    
+    //不断执行 可以写多个 同时执行多个
+    var i=0;
+    setInterval(function(){
+        i++
+        console.log(i);
+    },1000/*1秒*/);
+    //停止的
+    var i=0;
+    var timer=setInterval(function(){
+        i++
+        console.log(i);
+        if(i>10){
+            clearInterval(timer);
+        }
+    },1000/*1秒*/);
+    </script>
+</body>
+</html>
