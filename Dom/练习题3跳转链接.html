@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #box{
+      width: 100px;
+      height: 200px;
+      background-color: gray;
+    }
+  </style>
+</head>
+<body>
+  <ul id="box">
+    <li id="li1" data-url="http://www.baidu.com">百度</li>
+    <li id="li2" data-url="http://www.taobao.com">淘宝</li>
+  </ul>
+  <!-- <img src="log.png" rsrc = "xxx.jpg" alt=""> -->
+  <script>
+    var oLi1 = document.getElementById("li1");
+    var oLi2 = document.getElementById("li2");
+    oLi1.onclick = function(e){
+      console.log(this);
+      this.innerText = "hello"
+      // console.log(e.target.dataset.url);
+      // var thisSrc = oLi1.getAttribute("mysrc");
+      // location.replace(thisSrc);
+    }
+  </script>
+</body>
+</html>
