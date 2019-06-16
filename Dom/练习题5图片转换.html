@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .tupian span img{
+        width: 202px;
+        height: 90px;
+        padding: 80px;
+        border: 1px gray solid;
+        margin-left: 58px;
+    }
+    .tupian li{
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+        padding: 18px;
+        margin-top: -40px;
+    }
+    .tupian li img{
+        width: 50px;
+        height: 50px;
+        margin: auto;
+        border: 1px gray solid;
+        padding: 20px;
+    }
+
+</style>
+<body>
+   <div class="tupian">
+       <span>
+        <img class="img1" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1631343711,1764255509&fm=27&gp=0.jpg" alt="">
+       </span>
+       <ul>
+       <li class="123"><img src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-320.png" alt=""></li>
+       <li class="123"><img src="https://i1.mifile.cn/f/i/17/appdownload/download.png" alt=""></li>
+       <li class="123"><img src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-320.png" alt=""></li>
+       <li class="123"><img src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-320.png" alt=""></li>
+       </ul>
+   </div> 
+   <script>
+      var oimg=document.getElementsByClassName("img1")[0];
+      console.log(oimg);
+      var aimg=document.getElementsByTagName("img");
+      for(var i=0;i<aimg.length;i++){
+       aimg[i].index=i;
+       aimg[i].onmouseover=function(){
+        var img=aimg[this.index].getAttribute("src");
+        oimg.setAttribute("src",img) ;   
+       }
+      }  
+   </script>
+</body>
+</html>
