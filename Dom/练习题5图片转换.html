@@ -1,58 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<style>
-    .tupian span img{
-        width: 202px;
-        height: 90px;
-        padding: 80px;
-        border: 1px gray solid;
-        margin-left: 58px;
-    }
-    .tupian li{
-        width: 50px;
-        height: 50px;
-        display: inline-block;
-        padding: 18px;
-        margin-top: -40px;
-    }
-    .tupian li img{
-        width: 50px;
-        height: 50px;
-        margin: auto;
-        border: 1px gray solid;
-        padding: 20px;
-    }
 
-</style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    li{
+      list-style: none;
+    }
+    .clearfix::after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+    body{
+      background-color: black;
+    }
+    .box{
+      width: 490px;
+      height: 170px;
+      border:5px solid #fff;
+      position: relative;
+      margin:0 auto;
+    }
+    .img-bar li{
+      position: absolute;
+      top:0;
+      left: 0;
+      display: none;
+    }
+    .img-bar .active{
+      display: block
+    }
+    .right-btn{
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+    .right-btn li,.left-btn li{
+      float: left;
+      width: 20px;
+      height: 20px;
+      background-color: #f90;
+      border-radius: 50%;
+      color: #fff;
+      text-align: center;
+      line-height: 20px;
+      font-size: 12px;
+      margin:0 10px 10px 0;
+    }
+    .left-btn{
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+    .right-btn .active{
+      background-color: red;
+    }
+  </style>
+</head>
 <body>
-   <div class="tupian">
-       <span>
-        <img class="img1" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1631343711,1764255509&fm=27&gp=0.jpg" alt="">
-       </span>
-       <ul>
-       <li class="123"><img src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-320.png" alt=""></li>
-       <li class="123"><img src="https://i1.mifile.cn/f/i/17/appdownload/download.png" alt=""></li>
-       <li class="123"><img src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-320.png" alt=""></li>
-       <li class="123"><img src="https://i1.mifile.cn/f/i/g/2015/cn-index/mi9-320.png" alt=""></li>
-       </ul>
-   </div> 
-   <script>
-      var oimg=document.getElementsByClassName("img1")[0];
-      console.log(oimg);
-      var aimg=document.getElementsByTagName("img");
-      for(var i=0;i<aimg.length;i++){
-       aimg[i].index=i;
-       aimg[i].onmouseover=function(){
-        var img=aimg[this.index].getAttribute("src");
-        oimg.setAttribute("src",img) ;   
-       }
-      }  
-   </script>
+  <div class="box">
+    <div class="img-bar">
+      <ul>
+        <li class="active"><img src="./image/01.jpg" alt=""></li>
+        <li><img src="./image/02.jpg" alt=""></li>
+        <li><img src="./image/03.jpg" alt=""></li>
+        <li><img src="./image/04.jpg" alt=""></li>
+        <li><img src="./image/05.jpg" alt=""></li>
+      </ul>
+    </div>
+    <div class="left-btn">
+      <ul>
+        <li id="lt">&lt;</li>
+        <li id="gt">&gt;</li>
+      </ul>
+    </div>
+    <div class="right-btn">
+      <ul class="clearfix">
+        <li class="active">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    var oBox = document.getElementsByClassName("box")[0];
+    var numBtn = document.getElementsByClassName("right-btn")[0].getElementsByTagName("li");
+    var aImg = document.getElementsByClassName("img-bar")[0].getElementsByTagName("li");
+    var leftBtn = document.getElementById("lt");
+    var rightBtn = document.getElementById("gt");
+    var nowIndex = 0;
+    var timer = null;
+    //图片切换函数
+    function play(index){
+      if(index>4){
+        index = 0
+      }
+      if(index<0){
+        index = 4
+      }
+      for(var j=0;j<numBtn.length;j++){
+        numBtn[j].classList.remove("active");
+        aImg[j].classList.remove("active");
+      }
+      nowIndex = index;
+      numBtn[index].classList.add('active');
+      aImg[index].classList.add('active');
+    }
+    //下一张按钮
+    rightBtn.onclick = function(){
+      nowIndex++;
+      play(nowIndex);
+    }
+    //上一张按钮
+    leftBtn.onclick = function(){
+      nowIndex--;
+      play(nowIndex);
+    }
+    //数字按钮事件
+    for(var i =0;i<numBtn.length;i++){
+      numBtn[i].index = i;
+      numBtn[i].onmouseover = function(){
+        play(this.index)
+      }
+    }
+    //定时函数
+    //setTimeout 仅仅执行一次
+    //setInterval 可以循环执行
+    // setInterval(rightBtn.onclick,1000)
+
+    // var timer = setInterval(function(){
+    //   nowIndex++;
+    //   play(nowIndex);
+    // },1000);
+
+    function run(){
+      timer = setInterval(function(){
+        nowIndex++;
+        play(nowIndex);
+      },1000);
+    }
+    run();
+    //移入图片区域
+    oBox.onmouseover =function(){
+      clearInterval(timer);
+    }
+    //移出图片区域
+    oBox.onmouseout = function(){
+      run();
+    }
+  </script>
 </body>
 </html>
