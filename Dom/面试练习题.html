@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+  //   // 第一题 （快手）
+  //   showCa(new String("A"))
+  //   function showCa(val) {
+  //     switch (val) {
+  //       case "a":
+  //         console.log("a")
+  //       default:
+  //         console.log("b")
+  //     }
+  //   }   //b
+
+  //   //第二题 （快手）
+  //   var a = { x: 1 }
+  //   var b = a;
+  //   a.x = a = { n: 1 }
+  //   console.log(a);
+  //   console.log(b);//{n:1} {x:{n:1}}
+
+  //   // //第三题 （快手）
+  //   var a = [1, 2, 3, 4, 5, 6]//1,2,3,a,4,5,6
+  //   a.splice(3,0,'a');
+  //   console.log(a);
+  //   //splice插入一个字符（起始位置，删除个数，插入的元素）
+    
+  //   // //第四题 （快手）
+  //   var x = 1, y = 0, z = 0;
+  //   function add(x) {
+  //     return x = x + 1;
+  //   }
+  //   y = add(x);
+  //   function add(x) {
+  //     return x = x + 3
+  //   }
+  //   z = add(x)
+  //   console.log(x, y, z)// 1 2 4 
+  //   //函数会向上提升
+
+  //   // //第五题 （快手）
+  //   var str1 = 123000 //321
+  //   var num=str1.toString().split("").reverse().join("");
+  //   console.log(parseInt(num));
+  //   //tostring转化成字符串
+  //   //split把字符串转化成字符数组
+  //   //reverse把数组颠倒
+  //   //jion把数组的每个元素后插入一个字符
+  //   //parseInt转化成数值型
+    
+
+  //   // //第六题 （字节跳动）
+  //   var length = 10;
+  //   function fn() {
+  //     return this.length + 2
+  //   }
+  //   var obj = {
+  //     length: 5,
+  //     test1: function () {
+  //       return fn()
+  //     }
+  //   }
+  //   obj.test2 = fn;
+  //   console.log(obj.test1());//12
+  //   console.log(fn() === obj.test2());//false 12=7
+
+  //   // //第七题（字节跳动）
+  //   var user=[
+  //     {id:1,name:'a'},
+  //     {id:2,name:'b'},
+  //     {id:3,name:'a'},  
+  //     {id:4,name:'b'}
+  //   ]
+  //   unique(user)//a b
+  //   function unique(arr){
+  //   var temp=[];
+  //   for(var i=0;i<arr.length;i++){
+  //       if(temp.indexOf(arr[i].name)==-1){
+  //           temp.push(arr[i].name)
+  //       }  
+  //   }
+  //   console.log(temp);
+  //   }
+  //   //数组去重问题
+  //   //indexof把数组中的某个字符的位置输出
+
+
+
+  //   // //第八题（字节跳动）
+  //   var list = [1,[2,[3,[4,[5],6],7],8],9]; 
+  //   // 输出 1，2，3，4，5，6，7，8，9
+  //   var resArr=[];
+  //   function foo(arr){
+  //     for(var i=0;i<arr.length;i++){
+  //       if(typeof(arr[i])=="object"){
+  //          foo(arr[i]);
+  //       }else{
+  //         resArr.push(arr[i]);
+  //       }
+  //     }
+  //   }
+  //  foo(list);
+  //  console.log(resArr);
+  // console.log(list.toLocaleString);
+  // .toLocaleString把数组转化成本地数组
+  
+    // //第九题（字节跳动）
+    // const repeatfunc = repeat(console.log,5,500);
+    // repeatfunc('hello,wrold');
+    // //每隔500毫秒输出一个hello,world 输出5次
+    function repeat(fun,count,timer){
+      var thisTimer=null;
+      var thisCount=0;
+      return function(str){
+        setInterval(function(){
+          if(thisCount>=count){
+            clearInterval(thisTimer);
+          }else{
+            fun(str);
+            thisCount++;
+          }
+        },timer)
+      }
+    }
+    const repeatfunc = repeat(console.log,5,500);
+    repeatfunc('hello,wrold');
+
+  </script>
+
+</body>
+
+</html>
