@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        position: relative;
+    }
+  .head{
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0,.3);
+      display: none;
+  }
+  .window{
+      width: 300px;
+      height: 200px;
+      background-color: white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%)
+      
+      
+  }
+  .top{
+      width: 300px;
+      height: 30px;
+      background-color: #333
+  }
+  .window button{
+      float: right;
+      margin-top: 4px;
+  }
+  span{
+      color: white;
+  }
+</style>
+<body>
+      <button id="log">登录</button>
+      <button>注册</button>
+      <div class="head">
+        <div class="window">
+            <div class="top"><span>登录</span>
+                <button id="close">x</button></div>
+            <div class="bottom"><h1>登录</h1></div>
+        </div>
+    </div>
+<script>
+     var obtn=document.getElementById("log");
+     var ohead=document.getElementsByClassName("head")[0];
+     var oclose=document.getElementById("close");
+     obtn.onclick=function(){
+         ohead.style.display="block";
+     }
+     oclose.onclick=function(){
+         ohead.style.display="none";
+     }
+</script>
+</body>
+</html>

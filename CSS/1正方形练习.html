@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin-top: 0px;
+    }
+    .div1{
+        position: relative;
+        width: 100px;
+        height: 100px;
+        background-color: brown;
+    }
+    .div2{
+       padding-bottom :100%;
+       background-color: aquamarine;
+    }
+    .div3::after{
+        display: block;
+        padding-bottom :100%;
+        background-color: red;
+
+    }
+    .div4{
+        border-width: 100px;
+        /* border-top: 
+        border-left
+        border-right
+        border-bottom */
+        border-style: solid;
+        border-color:red transparent red transparent;
+    }
+</style>
+<body>
+    <div class="div1">
+        <div class="div2"></div>
+    </div>
+    <div class="div3"></div>
+    <div class="div4"></div>
+    <div class="div5"></div>
+</body>
+</html>
