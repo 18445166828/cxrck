@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    .clearfix::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    body {
+      background-color: black;
+    }
+
+    .box {
+      width: 490px;
+      height: 170px;
+      border: 5px solid #fff;
+      position: relative;
+      margin: 0 auto;
+    }
+
+    .img-bar ul {
+      width: 2450px;
+      position: absolute;
+    }
+
+    .img-bar li {
+      float: left;
+    }
+
+    .img-bar .active {
+      display: block
+    }
+
+    .right-btn {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+
+    .right-btn li,
+    .left-btn li {
+      float: left;
+      width: 20px;
+      height: 20px;
+      background-color: #f90;
+      border-radius: 50%;
+      color: #fff;
+      text-align: center;
+      line-height: 20px;
+      font-size: 12px;
+      margin: 0 10px 10px 0;
+    }
+
+    .left-btn {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+
+    .right-btn .active {
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="img-bar">
+      <ul id="img-ul" class="clearfix">
+        <li class="active"><img src="./image/01.jpg" alt=""></li>
+        <li><img src="./image/02.jpg" alt=""></li>
+        <li><img src="./image/03.jpg" alt=""></li>
+        <li><img src="./image/04.jpg" alt=""></li>
+        <li><img src="./image/05.jpg" alt=""></li>
+      </ul>
+    </div>
+    <div class="left-btn">
+      <ul>
+        <li id="lt">&lt;</li>
+        <li id="gt">&gt;</li>
+      </ul>
+    </div>
+    <div class="right-btn">
+      <ul class="clearfix">
+        <li class="active">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    var oBox = document.getElementsByClassName("box")[0];
+    var numBtn = document.getElementsByClassName("right-btn")[0].getElementsByTagName("li");
+    var aImg = document.getElementsByClassName("img-bar")[0].getElementsByTagName("li");
+    var leftBtn = document.getElementById("lt");
+    var rightBtn = document.getElementById("gt");
+    var oImgUl = document.getElementById("img-ul");
+    var timer = null;
+    var nowIndex = 0;
+    var dir = 1;
+    var isRun = true;
+    var timer2 = null;
+
+    for (var i = 0; i < numBtn.length; i++) {
+      numBtn[i].index = i;
+      numBtn[i].onmouseover = function () {
+        changeImg(this.index);
+      }
+    }
+
+    //向左按钮
+    leftBtn.onclick = function(){
+      changeImg(nowIndex - 1)
+    }
+
+    //向右按钮
+    rightBtn.onclick = function(){
+      changeImg(nowIndex + 1)
+    }
+
+    function changeImg(index) {
+      //判断是否运行
+      if (isRun) {
+        isRun = false;
+
+        //越界判断
+        if(index<0){
+          index = aImg.length-1;
+        }
+        if(index > aImg.length-1){
+          index = 0
+        }
+
+        //判断方向
+        if (nowIndex < index) {
+          dir = 1;
+        } else {
+          dir = -1
+        }
+        nowIndex = index;
+
+        //去除按钮选中状态！
+        for (var j = 0; j < numBtn.length; j++) {
+          numBtn[j].className = ""
+        }
+        numBtn[index].className = "active";
+
+        //实现图片动画效果
+        timer = setInterval(function () {
+          if (oImgUl.offsetLeft == -490 * index) {
+            clearInterval(timer);
+            isRun = true;
+          } else {
+            oImgUl.style.left = oImgUl.offsetLeft - 10 * dir + "px";
+          }
+        }, 16)
+      }
+    }
+    //定时运行
+    function run(){
+      timer2 = setInterval(function(){
+        changeImg(nowIndex + 1);
+      },3000)
+    }
+
+    //鼠标移出继续
+    oBox.onmouseout = function(){
+      run();
+    }
+    //鼠标移入停止
+    oBox.onmouseover = function(){
+      clearInterval(timer2)
+    }
+
+    run();
+  </script>
+</body>
+
+</html>
