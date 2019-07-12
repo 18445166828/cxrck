@@ -2,44 +2,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
     *{
-      margin:0
-    }
-    .container{
-      position: relative;
-    }
-    .container div{
-      height: 600px;
+        margin: 0;
     }
     .left{
-      width: 300px;
-      margin-top:50px;
-      background-color: blue;
-      float: left;
+        width: 300px;
+        height: 600px;
+        background-color: rgba(0, 0, 0, .3);
+        margin: left;
     }
     .right{
-      background-color: red;
-      position: absolute;
-      left:300px;
-      right: 0;
-    }
-    
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="left"></div>
-    <div class="right">
-        在 W3School，你可以找到你所需要的所有的网站建设教程。
+        margin-left: 300px;
+        height: 600px;
+        
+        background-color: red;
 
-        从基础的 HTML 到 CSS，乃至进阶的 XML、SQL、JS、PHP 和 ASP.NET。
-        在 W3School，你可以找到你所需要的所有的网站建设教程。
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="left"></div>
+        <div class="right"></div>
     </div>
-  </div>
 </body>
 </html>
