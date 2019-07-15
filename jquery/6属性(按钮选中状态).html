@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <div>hello</div>
+    <!-- 按钮的选中状态 -->
+    <input type="checkbox">
+    <button id="btn">add</button>
+    <button id="rbtn">remove</button>
+    <script>
+         $("div").attr("class","active");//设置属性，修改当前元素的属性，可见的
+         $("div").prop("a","aaaaaa");//不可见的
+         $("#btn").on("click",function(){
+             $("input").attr("checked",true);
+         });
+         $("#rbtn").on("click",function(){
+             $("input").removeAttr("checked",false);
+         })
+         
+    </script>
+</body>
+</html>

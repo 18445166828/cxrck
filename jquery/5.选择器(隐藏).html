@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        /* 三种不可见的方式 */
+        display: none; /*释放空间，隐藏位置被占用，不在文档流内*/
+        visibility: hidden; /*隐藏位置保留 ，不能触发事件*/
+        opacity: 0;/*透明度为0,隐藏位置不被占用，可以触发事件 */
+    }
+</style>
+<body>  
+    <input type="hidden">//隐藏内容， 
+    <div>hello</div>
+    <p>word</p>
+</body>
+</html>

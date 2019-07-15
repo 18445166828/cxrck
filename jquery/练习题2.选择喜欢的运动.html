@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-3.4.1.js"></script>
+</head>
+<style>
+    div{
+        font-size: 30px
+    }
+    button{
+        padding: 2px;
+    }
+</style>
+<body>
+    <div>你爱好的运动是？</div>
+    <input type="checkbox" id="fb">足球
+    <input type="checkbox" id="vb">排球
+    <input type="checkbox" id="bb">篮球
+    <input type="checkbox" id="bm">羽毛球
+    <br>
+    <button id="all">全选</button>
+    <button id="nall">全不选</button>
+    <button id="re">反选</button>
+    <script>
+        $("#all").on("click",function(){
+            // $("[type='checked]").prop("checked",true);
+            $("input").prop("checked",true);
+        })
+        $("#nall").on("click",function(){
+            $("input").prop("checked",false);
+        })
+        $("#re").on("click",function(){
+            var allcheckbox=$("[type='checkbox']");
+            allcheckbox.each(function(index,item){
+            if($(item).prop("checked")){
+                $(item).prop("checked",false);
+            }else{
+                $(item).prop("checked",true);
+            }
+            // item.checked!=item.checked;
+            })
+        })
+
+// 方法2
+    //   $("#re").on("click",function(){
+    //     var aChecked = $("[type='checkbox']:checked");
+    //     var unCheckec = $("[type='checkbox']:not(:checked)")
+    //     aChecked.prop("checked",false);
+    //     unCheckec.prop("checked",true);
+    //   })
+
+// each遍历函数
+      // var arr = [1,2,3,4,5,6]
+      // arr.forEach(function(item,index,arrays){
+      //   console.log(item,index,arrays);
+      // })
+      // $(arr).each(function(index,item){
+      //   console.log(index,item);
+      // })
+    </script>
+</body>
+</html>
