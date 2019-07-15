@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <button id="btn">add</button>
+  <script>
+    var oUl = document.getElementsByTagName("ul")[0];
+    var oBtn = document.getElementById("btn");
+    var aLi = oUl.getElementsByTagName("li");
+
+    //事件委托
+    oUl.onclick = function(e){
+      // console.log(e.target);
+      // console.log(e.currentTarget);
+      
+      if(e.target.nodeName == "LI"){
+        console.log(e.target.innerText);
+      }
+    }
+
+    oBtn.onclick = function(){
+      var oLi = document.createElement("li");
+      var lastEl = oUl.lastElementChild.innerText;
+      oLi.innerText = parseInt(lastEl)+1
+      oUl.appendChild(oLi)
+    }
+
+  </script>
+</body>
+</html>

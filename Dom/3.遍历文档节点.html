@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+</head>
+
+<body>
+
+  <script>
+    // window.onload = function(){
+    //   console.log(document.getElementsByTagName("div"));
+    // }
+    window.onload = function () {
+      function foo(node) {
+        if (node.nodeType == 1) {
+          console.log(node.nodeName);
+        }
+        for (var i = 0; i < node.childNodes.length; i++) {
+          if (node.childNodes[i].nodeType == 1) {
+            foo(node.childNodes[i])
+          }
+        }
+      }
+      foo(document)
+    }
+  </script>
+  <div>
+    <span></span>
+  </div>
+  <p></p>
+</body>
+
+</html>
