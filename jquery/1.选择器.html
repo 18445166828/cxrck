@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/jquery-3.4.1.js"></script>
+  <style>
+
+    /* <:表示选中子代选择器
+        ：空格表示后代选择器
+       +:表示紧跟在后面的兄弟选择器
+       ~:表示选中所有的兄弟 */
+
+    #box,.div1{
+      color: red
+    }
+  </style>
+</head>
+<body>
+  <!-- <div id="box">
+    <div class="div2">
+      <div class="div3">hello</div>
+    </div>
+  </div>
+  <div class="div1">a</div>
+  <div>b</div> -->
+
+
+<!-- 
+  //<ul> <li></li> </ul:>列表：
+    :eq(2):选中列表里面的元素，按索引算,选中第二项
+    :odd:选中奇数项
+    :even:选中偶数项
+    :first:选中第一项
+    :last:选中最后一项
+    :gt(2):选中大于2的项
+    :lt(2):选中小于2的项
+    :not(.a):选中出来名字为a的其他项 -->
+
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li class="a">3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+  <script>
+    $("li:not(.a)").css("color","red")
+    // $("li:lt(2)").css("color","red");
+    // $("li:last").css("color","red")
+    // $("li:eq(2)").css("color","red");
+    // $("li:even").css("color","red")
+    // console.log($("#box"));
+    // console.log($(".div1"));
+    // console.log($("div"));
+    // $("#box,.div1")
+    // console.log($("#box .div3"));
+    // console.log($("#box + div"));
+    // console.log($("#box ~ div"));
+    
+    
+  </script>
+</body>
+</html>

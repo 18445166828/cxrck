@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin:0
+    }
+    #div1{
+      height: 1000px;
+      background-color: red;
+    }
+    #div2{
+      height: 1000px;
+      background-color: blue;
+    }
+    #div3{
+      height: 1000px;
+      background-color: yellow;
+    }
+    ul{
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    ul li{
+      list-style: none;
+      float: left;
+      margin-right: 50px;
+      font-size: 30px
+    }
+  </style>
+  <script src="./js/jquery-3.4.1.js"></script>
+</head>
+<body>
+  <!-- 锚点链接 -->
+  <!-- //添加一个a标签，点击内容，滚动到指定位置
+       锚点链接：<a href="#div1">a</a>
+       点击a滚动到div1 -->
+  <ul>
+    <li> <a href="#div1">a</a> </li>
+    <li> <a href="#div2">b</a> </li>
+    <li> <a href="#div3">c</a> </li>
+  </ul>
+  <div id="div1"></div>
+  <div id="div2"></div>
+  <div id="div3"></div>
+
+
+  <!-- 通过jquery给元素绑定事件
+       :target选中的是前一个元素 -->
+  <script>
+    $("a").on("click",function(){
+      $("div:target").css("background","black")
+    })
+  </script>
+</body>
+</html>
