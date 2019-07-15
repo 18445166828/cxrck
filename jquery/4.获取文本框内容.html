@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-3.4.1.js"></script>
+</head>
+<style>
+table{
+    border: 1px solid black;
+    border-collapse: collapse;
+    /* 合并行列中间的间距 */
+}
+td{
+    border: 1px solid black;
+}
+
+/* 对表头进行操作 */
+thead td{
+    font-size: 30px;
+    font-weight: bold;
+}
+</style>
+<body>
+
+    <!-- 建立table列表 -->
+<table>
+        <tr></tr><!--//行 -->
+        <td></td><!--//列 -->
+   </table>
+
+    <input type="text" id="inp">
+    <script>
+    // keydown 根据文本框内容，触发事件，点击键盘时触发。
+    // keyup 根据文本框内容，触发事件（数字内容比较合适）
+     $("#inp").on('keyup', function () {
+         console.log(this.value);
+         console.log($(this).val());     
+      })
+    </script>
+</body>
+</html>
