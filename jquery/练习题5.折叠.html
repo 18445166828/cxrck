@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-3.4.1.js"></script>
+</head>
+<style>
+#first{
+    background-color: aqua;
+}
+#second{
+    background-color: aqua;
+}
+.active{
+  display: none;  
+}
+.active1{
+    background-color: red;
+}
+
+</style>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td><h1>姓名</h1></td>
+                <td><h1>性别</h1></td>
+                <td><h1>暂住地</h1></td>
+            </tr>
+        </thead>
+            <tr>
+                <td colspan="3" id="first">前端设计组</td>
+            </tr>
+        <tbody id="l1">
+            <tr>
+                <td>张四</td>
+                <td>男</td>
+                <td>浙江宁波</td>
+            </tr>
+            <tr>
+                <td>李三</td>
+                <td>男</td>
+                <td>浙江宁波</td>
+            </tr>
+            <tr>
+                <td>王四</td>
+                <td>男</td>
+                <td>浙江宁波</td>
+            </tr>
+        </tbody>
+            <tr>
+                <td colspan="3" id="second">前台开发组</td>
+            </tr>
+        <tbody id="l2">
+            <tr>
+                <td>六六</td>
+                <td>男</td>
+                <td>浙江宁波</td>
+            </tr>
+            <tr>
+                <td>李吧</td>
+                <td>男</td>
+                <td>浙江宁波</td>
+            </tr>
+            <tr>
+                <td>韩一</td>
+                <td>男</td>
+                <td>浙江宁波</td>
+            </tr>
+        </tbody>
+    </table>
+<script>
+$("#first").on("click",function(){
+  $("#l1").toggleClass("active");
+})
+
+$("#second").on("click",function(){
+  $("#l2").toggleClass("active");
+})
+</script>
+</body>
+</html>

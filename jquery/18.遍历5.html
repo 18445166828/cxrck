@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/jquery-3.4.1.js"></script>
+</head>
+<body>
+  <div id="box">
+    <ul id="ul1">
+    <li>1</li>
+    <li>2</li>
+    <li class="aa">3
+      <ul id="ul2">
+        <li>a</li>
+        <li class="aabb">b</li>
+        <li>c</li>
+        <li>d</li>
+      </ul>
+    </li>
+    <li class="bb">4</li>
+    <li class="cc">5</li>
+    <li class="cc">6</li>
+    <li class="cc">7</li>
+    <li class="dd">8</li>
+    <li class="ee">9</li>
+  </ul>
+  </div>
+  
+  <script>
+// .parents():返回祖先元素
+// .parentsUntil():返回祖先元素，直到..，不包括until里面的内容
+// .childern():返回亲子代，也可以返回指定的子代
+// .closest():返回最先匹配的祖先元素
+// .addBack():把当前元素加入当前集合内 
+
+    // console.log($(".aa").parent());
+    // console.log($(".aa").parents());
+    // console.log($(".aa").parentsUntil("body"));
+    // console.log($("#ul1").find(".aabb"));
+    // console.log($(".aabb").closest("#box"))
+
+    $(".bb").nextAll().addBack().css("color","red");
+    
+    
+
+  </script>
+</body>
+</html>

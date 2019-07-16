@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/jquery-3.4.1.js"></script>
+</head>
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li class="aa">3</li>
+    <li class="bb">4</li>
+    <li class="cc">5</li>
+    <li class="cc">6</li>
+    <li class="cc">7</li>
+    <li class="dd">8</li>
+    <li class="ee">9</li>
+
+  </ul>
+  <script>
+// .find("aa"):从子集往下找，找到aa名字的元素
+// .next():找到当前元素紧跟着的元素
+// .nextAll():找到当前元素后面的所有的元素
+// .nextUntil():找到当前元素直到指定的元素，一段
+
+    // $("ul").find(".aa").css("color","red");
+    // $(".aa").next(".bb").css("color","red");
+    // $(".aa").nextAll('.cc').css("color","red");
+    // $(".aa").nextUntil(".dd").css("color","red");
+    // $(".dd").prev().css("color","red");
+    // $(".dd").prevAll().css("color","red");
+    $(".dd").prevUntil(".aa").css("color","red");
+
+  </script>
+</body>
+</html>

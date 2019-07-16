@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/jquery-3.4.1.js"></script>
+</head>
+<body>
+  <!-- <div id="div1">div1
+    <div id="div2">div2</div>
+  </div>
+  <button id="btn">btn</button> -->
+<form action="test.php">
+  <input type="text" name="username" id="">
+  <input id="sub" type="submit" value="提交">
+</form>
+<button id="btn">test</button>
+  <script>
+// document先于window执行
+// .on():绑定事件
+// .off():解除事件
+// .one():和on的用法一样，只对当前事件触发一次，自己解绑
+// .trigger():可以触发事件冒泡
+// .triggerHandler():不触发冒泡事件，不会触发原生事件
+
+    $("#btn").on("click",function(){
+      $("#sub").triggerHandler("click")
+    })
+    // $("#div1").on("click",function(){
+    //   console.log('div1');
+    // })
+    // $("#div2").on("click",function(){
+    //   console.log('div2');
+    // })
+    // $("#btn").on("click",function(){
+    //   // $("#div2").trigger("click")
+    //   $("#div2").triggerHandler("click")
+
+    // })
+    // function foo(){
+    //   console.log("com");
+    // }
+    // $("#btn").one("click",foo);
+    // $("#btn").on("click",foo)
+    // $("#btn").off("click",foo);
+  //  $(window).on("resize",function(){
+  //    console.log('resize');
+     
+  //  })
+  // $( document ).ready(function() {
+  // // Handler for .ready() called.
+  // });
+  </script>
+</body>
+</html>

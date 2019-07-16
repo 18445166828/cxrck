@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-3.4.1.js"></script>
+</head>
+<style>
+   *{
+       margin: 0;
+   }
+    #box{
+        height: 200px;
+        width: 500px;
+        border: 1px solid #000;
+        margin: auto;
+    }
+    #header{
+        height: 50px;
+        background-color: black;
+    }
+    span{
+        padding: 15px;
+        margin: 10px;
+        color: white;
+        line-height: 50px;
+    }
+    ul{
+        display: none;
+    }
+</style>
+<body>
+    <div id="box">
+       <div id="header">
+            <span id="s1">第一课</span>
+            <span id="s2">第二课</span>
+            <span id="s3">第三课</span>
+       </div>
+       <div id="bottom">
+            <ul id="u1">
+                <li>第一页</li>
+                <li>小一</li>
+            </ul>
+            <ul id="u2">
+                <li>第二页</li>
+                <li>小二</li>
+            </ul>
+            <ul id="u3">
+                <li>第三页</li>
+                <li>小三</li>
+            </ul>
+       </div>
+    </div>
+<script>
+    $("#s1").on("mouseover",function(){
+        $("#s1").css("backgroundColor","white").css("color","black");
+        $("#u1").css("display","block");
+    })
+    $("#s1").on("mouseout",function(){
+        $("#s1").css("backgroundColor","black").css("color","white");
+        $("#u1").css("display","none");
+    })
+    
+    $("#s2").on("mouseover",function(){
+        $("#s2").css("backgroundColor","white").css("color","black");
+        $("#u2").css("display","block");
+    })
+    $("#s2").on("mouseout",function(){
+        $("#s2").css("backgroundColor","black").css("color","white");
+        $("#u2").css("display","none");
+    })
+
+    $("#s3").on("mouseover",function(){
+        $("#s3").css("backgroundColor","white").css("color","black");
+        $("#u3").css("display","block");
+    })
+    $("#s3").on("mouseout",function(){
+        $("#s3").css("backgroundColor","black").css("color","white");
+        $("#u3").css("display","none");
+    })
+</script>
+</body>
+</html>
