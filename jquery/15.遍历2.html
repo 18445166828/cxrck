@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/jquery-3.4.1.js"></script>
+</head>
+<body>
+
+<!-- .add()：把一个标签添加进另一个标签，组成一个集合共同控制样式
+    .contents:输出指定标签的内容 -->
+
+  <div>hello</div>
+  <div>world</div>
+  <p>fellow32</p>
+  <script>
+    $("div").add($("p")).css({
+      color:"red",
+      fontSize:"30px"
+    });
+    console.log($("p").contents());
+    
+  </script>
+</body>
+</html>

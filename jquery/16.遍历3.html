@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/jquery-3.4.1.js"></script>
+</head>
+<body>
+  <div id="div1">hello</div>
+  <div>world</div>
+  <div id="div2">fellow32</div>
+  <script>
+
+// .siblings():获取兄弟元素或者兄弟标签
+// .end():选择上一层的元素进行操作
+
+    $("#div1").siblings("#div2").css("color","red").end().css("color","blue");
+    
+  </script>
+</body>
+</html>
