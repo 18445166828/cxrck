@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/jquery-3.4.1.js"></script>
+  <style>
+    div{
+      height: 3000px;
+      background-color: red;
+    }
+    button{
+      position: fixed;
+      bottom: 0;
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+<!-- 不断地获取滚动条距离顶部的位置 -->
+<!-- // 给窗口绑定滚动事件 -->
+  <div></div>
+  <button id="btn">top</button>
+  <script>
+    $(window).on("scroll",function(){
+      console.log($(this).scrollTop());
+    })
+    $("#btn").on("click",function(){
+      $(window).scrollTop(0);
+    })
+  </script>
+</body>
+</html>

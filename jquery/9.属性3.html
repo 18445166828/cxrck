@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/jquery-3.4.1.js"></script>
+  <style>
+    *{
+      margin:0;
+    }
+    .div2{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      border:1px solid #ddd;
+      /* padding:10px;
+      margin:10px; */
+      margin: 10px;
+      position: absolute;
+      top: 10px;
+      left: 0;
+    }
+    .div1{
+      position: relative;
+      top: 30px;
+      left: 30px;
+      width: 300px;
+      height: 300px;
+      background-color: blue;
+    }
+  
+  </style>
+</head>
+<body>
+  <div class="div1">
+    <div class="div2"></div>
+  </div>
+  <script>
+  //  .innerWidth(): 返回值包括正常width+padding
+  //  .outerWidth():返回值包括正常width+padding和border
+  //  .offset():返回距离浏览器上边距和左边距
+  //  .position():返回当前定位里面的上边距和左边距
+  //  .offsetParent():返回最外层的上边距和左边距
+
+    // console.log($("div").width());
+    // console.log($("div").innerWidth());
+    // console.log($("div").outerWidth());
+    console.log($(".div2").position());
+    console.log($(".div2").offset());
+    console.log($(".div2").offsetParent());
+    
+
+    
+  </script>
+</body>
+</html>

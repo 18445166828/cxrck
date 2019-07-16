@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/jquery-3.4.1.js"></script>
+</head>
+<body>
+  <div id="div1">
+    <p class="p1">1</p>
+    <span>2</span>
+    <div>3</div>
+    <p>4</p>
+  </div>
+  <!-- <div class="container">
+      <div class="hello">Hello</div>
+      <div class="goodbye">Goodbye</div>
+    </div> -->
+  <script>
+
+    // .empty():清空
+    // $("").remove():选定移除的标签指定移除的元素
+    // .unWrap():
+    // .detach:删除后保存，方便后续的返回
+    
+    var a = $(".p1").detach();
+    console.log(a);
+    
+    // $(".p1").unwrap();
+
+    // $("p").remove(".p1");
+    // $('div').remove('.hello');
+    // $("#div1").empty()
+    // $("#div1").remove(".p1");
+    // $("p").remove()
+  </script>
+</body>
+</html>

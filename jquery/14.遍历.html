@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+  <!-- <ul>
+    <li>list item 1</li>
+    <li>list item 2</li>
+    <li>
+      <ul>
+        <li>a</li>
+        <li>b</li>
+      </ul>
+    </li>
+    <li>list item 4</li>
+    <li>list item 5</li>
+  </ul> -->
+  <div id="div1">
+    <p>a</p>
+    <span>b</span>
+    <div>c</div>
+  </div>
+  <script>
+
+    // .eq(2):选取列表中指定的一项：例第二项
+    // .fillter(:even)：过滤所有的偶数
+    // .last():选取最后一个
+    // $("li").has("ul"):选中一项中包含另一项的:选取li中包含ul的
+    // $("").is("span"):选取的元素是不是span
+    
+    // $("li").eq(2).css("color","red")
+    // $('li').filter(':even').css('background-color', 'red');
+    // $("li").first().css("color","red")
+    // $("li").has("ul").css("color","red");
+    $("#div1").on("click",function(e){
+      if($(e.target).is("span")){
+        console.log('yes');
+      }
+    })
+  </script>
+</body>
+
+</html>
