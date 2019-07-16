@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/jquery-3.4.1.js"></script>
+  <style>
+    *{
+      margin:0
+    }
+    #div1{
+      width: 300px;
+      height: 300px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <button id="show">show</button>
+  <button id="hide">hide</button>
+  <button id="toggle">toggle</button>
+  <div id="div1"></div>
+  <script>
+
+// .show(1000):显示，1000控制过度效果，高，宽。透明度。
+// .hide('slow'):隐藏,slow,fast,控制效果
+// .toggle():取反，显示隐藏之间取反。
+
+    $("#show").on("click",function(){
+      $("#div1").show('slow');
+    })
+    $("#hide").on("click",function(){
+      $("#div1").hide('fast');
+    })
+    $("#toggle").on("click",function(){
+      $("#div1").toggle(1000)
+    })
+  </script>
+</body>
+</html>
