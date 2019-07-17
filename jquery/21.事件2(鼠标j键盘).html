@@ -30,6 +30,10 @@
     $("input").keydown(function(){
        console.log("keydown");
     })
+// 获取回车事件
+    $("input").keydown(function(e){
+       console.log("e.which==13");
+    })
 // 点击键盘并抬起触发
     $("input").keypress(function(){
        console.log("keydown");

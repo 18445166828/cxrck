@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var name = "小B"
+        function foo(str,str2){
+            console.log("foo:",this.name,str,str2);
+        }
+        var obj = {
+            name:"小a",
+            showName:function(){
+                console.log("obj:",this.name);
+            }
+        }
+        function fun1(){
+            console.log("fun1");
+            
+        }
+        function fun2(){
+            console.log("fun2");
+            
+        }
+        fun1.call().call(fun2);
+        // foo()
+        // obj.showName();
+        //call()
+        //第一个参数是所要重定向到的对象 从第二个参数开始有多个参数，用来代表函数的实参
+        // foo.call(obj,'abc',"123");
+        //apply 两个参数 第一个参数是要重定向到的对象 第二个参数是一个数组里面就是函数实参
+        // foo.apply(obj,['abc','123'])
+        //bind 它不会立即执行 调用bind 的时候只是绑定this 
+        // var foo2 = foo.bind(obj,"abc","123")
+        // foo2()
+    </script>
+</body>
+</html>
+<!-- 改变this指向：用.call()方法:例如foo.call(obj);
+需要传参时foo.call(obj,'abc',"123");第一个参数表示指向的对象，后面的参数表示传的参数
+.apply()方法也可以改变this指向，apply()只可以传两个参数，第一个指向，第二个时数组；
+.bind()也可以，不会立即执行，调用bind()时会先绑定this，需要用变量接收。再调用变量。 -->

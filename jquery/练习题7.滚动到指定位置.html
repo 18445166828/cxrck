@@ -5,24 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="./js/jquery-3.4.1.js"></script>
 </head>
 <style>
+    *{
+        margin:0px;
+    }
     div{
         height: 1000px;
     }
-    .l1{
+    #l1{
         background-color: aqua;
     }
-    .l2{
+    #l2{
         background-color: blue;
     }
-    .l3{
+    #l3{
         background-color: blueviolet;
+    }
+    a{
+        color: whitesmoke;
+    }
+    #a1{
+        position: fixed;
+    }
+    #a2{
+        position: fixed;
+        left:60px;
+    }
+    #a3{
+        position: fixed;
+        left:120px;
     }
 </style>
 <body>
-    <div id="l1">1</div>
-    <div id="l2">2</div>
-    <div id="l3">3</div>
+    <div id="l1">
+            <a id="a1" href="#l1">第一页</a>
+            <a id="a2" href="#l2">第二页</a>
+            <a id="a3" href="#l3">第三页</a>
+            <br><h1>1</h1></div>
+    <div id="l2"><h1>2</h1></div>
+    <div id="l3"><h1>3</h1></div>
+    <script>
+    $("a").on("click",function(){
+        $('html,body').animate({
+            scrollTop:$($(this).attr("href")).offset().top
+        },1000)
+    })
+
+    
+
+   
+
+    </script>
 </body>
 </html>

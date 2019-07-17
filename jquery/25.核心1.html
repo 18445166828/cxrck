@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <script>
+// .extend():对象合并，添加到第一个，没有的属性添加，已有的属性将会被覆盖
+        var obj = {
+            name:"小明",
+            age:"20"
+        }
+        var obj2 = {
+            name:"小刚",
+            school:"黑大"
+        }
+        var obj3 = {
+            sex:"男"
+        }
+        $.extend(obj,obj2,obj3);
+        console.log(obj);
+        
+        
+    </script>
+</body>
+</html>
