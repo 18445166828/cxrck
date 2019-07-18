@@ -1,0 +1,80 @@
+<!-- li标签变横排：float、display：inline-block。
+             display：flex;弹性盒模型，写在父级上。
+display：flex的属性：
+justtify-concent:两端对齐：水平排列 先设置 display：flex;添加属性justtify-concent:space-around;
+flex-direction:横向轴的方向
+align-items:垂直方向：align-items：center，垂直水平居中
+flex-wrap:wrap;宽度范围内换行，与flex-basis效果一样
+align-content:多行排列。
+flex-flow：相当于flex-direction和flex-wrap的缩写，两参数。
+order:2 操作选中的当前元素。可排序。
+flex-grow:1 等比例分空间，自动匹配剩余空间
+flex-shrink:缩放。在空间内缩放
+align-self:对当前元素做单独处理  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    
+    ul{
+      /* padding-left:100px; */
+      margin: 100px auto;
+      width: 600px;
+      height: 500px;
+      border: 1px solid black;
+      display: flex;
+      /* flex-wrap: wrap; */
+      /* justify-content: center; */
+      /* flex-direction: column */
+      /* align-items: center; */
+      /* align-content:center; */
+    }
+    li{
+      list-style: none;
+      flex-basis: 100px;
+      /* width: 33.3333%; */
+      /* flex-grow: 1; */
+      height: 100px;
+      background-color: red;
+    }
+    li:nth-child(2){
+      /* flex-shrink: 0 */
+      align-self: flex-end;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <!-- <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>10</li>
+    <li>11</li>
+    <li>12</li>
+    <li>13</li>
+    <li>14</li>
+    <li>15</li>
+    <li>16</li> -->
+  </ul>
+</body>
+</html>
