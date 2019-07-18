@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .div1{
+        font-size: 30px;
+    }
+    .div2{
+        width: 5em;
+        height: 5em;
+        background-color: red;
+    }
+</style>
+<body>
+<!-- 相对单位：
+em:相对单位，相对font-size，当前widthxfont-size，当前没有font-size向父级继续找，适用于局部
+rem:相对于html的font-size
+vw、vh:视口宽度 -->
+    <div class="div1">
+       <div class="div2"></div>
+    </div>
+</body>
+</html>
