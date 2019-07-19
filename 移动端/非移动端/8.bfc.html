@@ -1,0 +1,83 @@
+<!-- 解决子集div下移带着父级一起：生成bfc区域
+在父级加overflow-hidden;
+
+解决兄弟集外边距重合：生成bfc区域
+在某个兄弟级加显示类别display:inline-block;
+
+解决两个自己共有一个父级浮动时的高度塌陷：
+通常用clear:float;
+overflow:hidden; -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin:0;
+    }
+    .div1{
+      width: 400px;
+      height: 400px;
+      background-color: blue;
+      overflow: hidden;
+    }
+    .div2{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      margin-top:20px;
+    }
+    .div3{
+      width: 400px;
+      height: 400px;
+      background-color: red;
+      margin-bottom: 30px;
+    }
+    .div4{
+      width: 400px;
+      height: 400px;
+      background-color: blue;
+      margin-top:10px;
+      /* overflow: hidden; */
+      display: inline-block;
+      /* display: table-cell; */
+    }
+    .div6{
+      width: 200px;
+      height: 200px;
+      background-color: blue;
+      float: left;
+    }
+    .div7{
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      float: left;
+    }
+    .div5{
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <!-- bfc -->
+  <div class="div1">
+    <div class="div2"></div>
+  </div> 
+
+  <div class="div3"></div>
+  <div class="div4"></div>
+
+  <div class="div5">
+    <div class="div6"></div>
+    <div class="div7"></div>
+  </div>
+
+
+  
+</body>
+</html>

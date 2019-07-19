@@ -1,0 +1,47 @@
+<!-- 移动端没有onmousemove，触摸事件ontouchstart、ontouchmove、ontouchend
+onclick会等300ms之后执行，判断单击双击事件，移动端用zepto.js库中的tap
+获取位置用client -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div>
+
+  </div>
+  <script>
+    var oDiv = document.getElementsByTagName("div")[0];
+    oDiv.onclick = function(){
+      console.log("click");
+    }
+    // oDiv.onmousemove = function(){
+    //   console.log("move");
+      
+    // }
+    oDiv.ontouchstart =function(e){
+      console.log(e);
+      
+      console.log("start");
+    }
+    oDiv.ontouchmove = function(){
+      console.log('move');
+    }
+    oDiv.ontouchend = function(){
+      console.log("end");
+    }
+    
+  </script>
+</body>
+</html>

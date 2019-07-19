@@ -1,0 +1,31 @@
+<!-- flash的替代品，实现动画效果。canvas画布通过js操作 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #can{
+      background-color: black;
+      /* height: 300px;
+      width: 300px; */
+    }
+  </style>
+</head>
+<body>
+  <canvas id="can" width="300" height="300"></canvas>
+  <script>
+    var oCanvas = document.querySelector("#can");
+    var context = oCanvas.getContext("2d");//声明
+    context.beginPath();//下笔
+    context.moveTo(10,10);//移动起始位置
+    context.lineTo(50,50);//移动终点位置
+    context.lineWidth = 10;// 控制粗细
+    context.strokeStyle= 'red';// 控制颜色：字符型
+    context.stroke();//绘制：最后一步
+  </script>
+</body>
+</html>

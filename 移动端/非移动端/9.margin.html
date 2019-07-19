@@ -1,0 +1,48 @@
+<!-- paddind写百分比相对父级
+margin:50% 相对于父级
+宽度不够浮动:margin-left设置成负值 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+    }
+    .center{
+      float: left;
+      flex-grow: 1;
+      height: 100px;
+      background-color: blue;
+      order:2
+    }
+    .left,.right{
+      float: left;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+    .left{
+      order: 1
+    }
+    .right{
+      background-color: green;
+      order: 3
+    }
+    .content{
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+      <div class="center"></div>
+      <div class="left"></div>
+      <div class="right"></div>
+  </div>
+</body>
+</html>
