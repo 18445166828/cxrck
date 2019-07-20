@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+        #can{
+          background-color: rgb(54, 49, 49);
+        }
+    </style>
+<body>
+
+    <canvas id="can" width="800" height="800"></canvas>
+    <script>
+        var oCan = document.getElementById("#can");
+        var context = oCan.getContext("2d");//声明
+        oCan.ontouchstart=function(e){
+            var thisX=e.changedTouches[0].clientX;
+            var thisY=e.changedTouches[0].clientY;
+            context.beginPath();//下笔
+            context.lineWidth = 2;// 控制粗细
+            context.strokeStyle = 'white';// 控制颜色：字符型
+            context.moveTo(thisX, thisY);//移动起始位置
+        }
+        oCan.ontouchmove=function(e){
+            var thisX=e.changedTouches[0].clientX;
+            var thisY=e.changedTouches[0].clientY;
+            context.lineTo(thisX, thisY);//移动终点位置
+        }
+        // context.beginPath();//下笔
+        // context.moveTo(10, 10);//移动起始位置
+        // context.lineTo(50, 50);//移动终点位置
+        // context.lineWidth = 10;// 控制粗细
+        // context.strokeStyle = 'white';// 控制颜色：字符型
+        // context.stroke();//绘制：最后一步
+    </script>
+</body>
+
+</html>
