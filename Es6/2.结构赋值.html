@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//定义数组
+//   var arr=[1,2,3,4];
+//   //var a=arr[0],b=arr[1];
+//   var [a,b,c,d]=[1,2,3,4];
+//   var [a,b,[x,y],d]=[1,2,[3,9],4];
+//   console.log(a,b,x,y,d);
+
+//对象的结构赋值
+//   var obj={
+//       name:"小c",
+//       age:"12"
+//   }
+//   let {name:a,age:b}=obj;
+//   console.log(a,b);
+
+//字符串赋值
+// let str="hello";
+// // let a=str.charAt(0);
+// // let a=str[0];
+// let [a,b,c,d]=str;
+// console.log(a,b,c,d);
+
+//函数赋值
+// function foo({name,age=100}){//age赋初值
+//     // age=age||0;
+//     // if(!age){age="0"};
+//     console.log(name,age);
+    
+//     // console.log(arguments);
+//     // arguments.callee//foo()调用函数本身
+// }
+// var obj={
+//     name:"aa",
+//     age:"13"
+// }
+// foo(obj)
+
+//函数返回值
+// function foo(){
+//     let arr=[1,2,3,4];
+//     // return arr;
+//     let obj={
+//         name:"aa",
+//         age:"12"
+//     }
+//     return obj;
+// }
+// let {name:a,age:b=10}=foo();
+// console.log(a,b);
+
+// // let [a,b,c,d]=foo();
+// // console.log(a,b,c,d);
+
+//变量交换
+// let a=10;
+// let b=20;
+// // let temp;
+// // temp=a;
+// // a=b;
+// // b=temp;
+
+// // [a,b]=[b,a]
+
+// // b=[a,a=b][0]
+
+// a=a+b;
+// b=a-b;
+// a=a-b;
+// console.log(a,b);
+
+//Json应用
+var obj={
+    name:"aa",
+    obj:"12"
+} 
+console.log(JSON.stringify(obj));//对象转化成字符串
+
+// let obj='{"name":"aa","age":"12"}'//obj转化成字符串 json格式
+// console.log(JSON.parse(obj));//字符串转化成对象
+
+
+
+</script>  
+</body>
+</html>
