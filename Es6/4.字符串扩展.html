@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div id="div1"></div>
+<script>
+//     var odiv=document.getElementById("div1");
+//     // odiv.innerHTML="<p class='active'>hello</p>"+"<span>word</span>"
+
+// //模板字符串
+// //${}	支持标签、换行、数学运算 
+// let str="h"
+//  odiv.innerHTML=`<p class='active'>hello${str}</p>
+// <span>word</span>`
+
+
+// let str="hello word"
+// console.log(str.indexOf("ee"));//按索引查找
+// console.log(str.includes("e"));//判断是否有e 布尔型
+// console.log(str.startsWith("hello"));//判断是否以指定字串开头 布尔型
+// console.log(str.endsWith("word"));;//判断是否以指定字串结尾 布尔型
+
+
+//let str="hello word"
+// function foo(str,str2){
+//  if(str.indexOf(str2)==0){
+//     return true;
+//  }
+//     return false;
+// }
+// console.log(foo(str,"hello"));
+// str.sw(str)
+//.prototype原型
+// String.prototype.sw=function(str){
+//     if(this.indexOf(str)==0){
+//     return true;
+//  }
+//     return false;
+// }
+// console.log(str.sw("hello"));
+
+
+let str="hello";
+console.log(str.padStart(10,"ab"));//.padStart(长度,"补充元素")规定长度并在开头补齐，可以反复执行
+console.log(str.padEnd(10,"ab")); //.padEnd(长度,"补充元素")规定长度并在结尾补齐，可以反复执行
+console.log(str.repeat(2));//.repeat(次数) 重复
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
