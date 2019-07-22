@@ -1,0 +1,122 @@
+/*！强制 */
+$color1: #ff00ff;
+/* 
+多行注释
+*/
+//单行
+
+#div1{
+  color: $color1;
+  .p1{
+    border:1px solid $color1;
+    &-span1{
+      color: black;
+    }
+  }
+  &:hover{
+    background-color: red;
+  }
+}
+#div2{
+  background-color: $color1;
+}
+#div3{
+  border: {
+    color:$color1;
+    width:1px
+  }
+}
+#div4{
+  border: {
+    left: {
+      color:$color1
+    }
+  }
+}
+$val1:width;
+#div5{
+  #{$val1}:10px;
+}
+@mixin mm($h,$w:10px){
+  width: $w;
+  height: $h;
+  background-color: red;
+}
+#div6{
+  @include mm($h:200px)
+}
+#div7{
+  font-size: 20px;
+  color: black;
+}
+#div8{
+  @extend #div7;
+  background-color: #fff;
+}
+@import "main";
+#div9{
+  // width: 5+6px;
+  height: 10-6px;
+  font-size: 2*10px;
+  border-width: (100px/10);
+  width: percentage(2/100)
+}
+
+$aurl:'xx.jpg';
+#div10{
+  background-image: url('css/'+$aurl);
+}
+#div11{
+  color:lighten(red,20%);
+  border-color: darken(red,20%);
+  background-color: transparentize(rgba(0,0,0,.5),.2);
+}
+#div12{
+  border:1px solid black;
+}
+$m1: (color:red,font-size:12px );
+#div13{
+  color:map-get($m1,color);
+}
+$str:'red';
+/* color is #{$str}*/
+#div-#{$str}{
+  color: red;
+}
+
+@for $i from 1 to 10 {
+  #div-#{$i}{
+    margin:#{$i}px
+  }
+}
+
+$arr: a b c d;
+
+@each $var in $arr {
+  #span-#{$var}{
+    color: red
+  }
+}
+$j:1;
+@while $j<10 {
+  #p-#{$j}{
+    color: red;
+  }
+  $j:$j+1;
+}
+@function foo($key){
+  @if($key==0){
+    @return red;
+  }
+  @else if($key == 2){
+    @return blue;
+  }
+  @else{
+    @error 'color warn';
+    @return yellow;
+  }
+}
+
+#div23{
+  color: foo(4)
+}
