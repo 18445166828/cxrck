@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+// function foo(a,b=1){//参数可赋默认值
+// console.log((a+b));
+// }
+// foo(1)
+
+
+// function foo(a=1,b,c){
+//     console.log(a,b);  
+// }
+// foo(1,2);
+// console.log(foo.length);//返回参数长度,去掉设置默认值的参数。遍历第一个参数就有初值，后面不会遍历
+// console.log(foo.name);//返回函数名
+
+
+// let foo=function foo2(){
+//     console.log(1122);
+    
+// }
+// console.log(foo.name);//返foo2
+
+
+//严格模式
+// "use strict"
+// // let a=10;//全局变量显式声明
+// // console.log(a);
+// function foo(){
+//     console.log(this);//正常this指向window。严格模式下不会
+// }
+// foo()
+//严格模式下构造函数：
+// function Person(){
+//     this.name="小明",//禁止this关键字指向全局对象 构造函数必须new 
+//     console.log("123");
+// }
+// Person();
+// 严格模式下不允许重复参数：
+// function foo(a,a,b){
+//     console.log(a,b);  
+// }
+// foo(1,2,3)
+// 严格模式下禁止使用with语句
+// let obj={
+//     name:"aa"
+// }
+// with(obj){//改变作用域
+//     console.log(this.name);  
+// }
+// 严格模式下禁止arguments.callee
+// function foo(){
+//     if(num==1){
+//         return 1;
+//     }else{
+//         return num*arguments.callee(num-1);
+//     }
+// }
+// console.log(foo(10));
+// 严格模式下禁止传参不允许赋默认值
+ function foo(a="aa"){
+    "use strict"
+     console.log(a);
+ }
+ foo();
+
+
+
+
+
+
+</script>
+</body>
+</html>
