@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+// Set类似于数组，但是成员的值都是唯一的
+// let arr2=[1,2,3,4,5]
+// let arr=new Set(arr2);
+// arr.delete(2);//删除
+// arr.add(1);//相当于push
+// arr.add(2);//无法添加，2是唯一的
+// arr.add(4)；
+// console.log(arr);
+
+//数组去重
+// let arr2=[1,2,3,4,5,4,5,1];
+// let arr3=[];
+// for(let i=0;i<arr2.length;i++){
+//     if(!arr3.includes(arr2[i])){
+//         arr3.push(arr2[i])
+//     }
+// }
+// console.log(arr3);
+
+// let arr2=[1,2,3,4,5,4,5,1];
+// let arr3=new Set(arr2);
+// console.log(Array.from(arr2));
+// console.log(arr3.has(2));//该值是否为Set的成员。布尔型
+// arr3.clear//清除所有成员，没有返回值
+
+//遍历 类数组索引从第一个成员开始
+// let arr2=["a","b","c"];
+// let arr3=new Set(arr2);
+// for(let [item,index] of arr3.entries()){
+//     console.log(item,index); 
+// }
+
+//成员只能是对象，也不允许成员重复
+   let ws = new WeakSet();
+      let obj = {
+        name:"333"
+      }
+      ws.add(obj);
+      ws.add(obj);
+      console.log(ws);
+      
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

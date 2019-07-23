@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//添加通过.set方法  .set(key,value) key不能重复
+// let map1=new Map();
+// map1.set("name","aaa");
+// console.log(map1);
+// //获取通过.get方法
+// map1.get()
+
+//WeakMap key只能是对象
+let wm=new WeakMap();
+wm.set({name:"aaa"},"123")
+console.log(wm);
+
+
+</script>
+</body>
+</html>
