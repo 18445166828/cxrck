@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+// var name="小a"
+// var age="12"
+// var str="school"
+// var obj={
+//     name,
+//     age
+// }
+//定义
+// var obj2={
+//     [str]:"aaa"//属性名想使用变量用中括号
+// }
+// console.log(obj2);
+
+//调用
+// var obj={
+//     name:"aa",
+//     age:"12",
+//     sex:"男",
+//     para:"xxx"
+// }
+// function foo(para){
+//     return obj[para]
+// }
+// console.log(foo("name"));
+//方法调用
+// var obj={
+//     name:"小明",
+//     showName(){
+//         console.log(this.name);  
+//     }
+// }
+// obj.showName()
+
+// //比较两个值是否严格相等,引用数据类型不相等 布尔型
+// console.log(Object.is(1,1));
+// console.log(NaN==NaN);//false
+// console.log(Object.is(NaN,NaN));//true
+// console.log(0==-0);//true
+
+//对象合并
+// let obj={
+//     name:"小明"
+// }
+// let obj2={
+//     // name:"小a",//会覆盖
+//     age:"20",
+//     school:"heida",
+//     parent:{
+//         father:"aaa"
+//     }
+
+// }
+// Object.assign(obj,obj2)
+// obj2.parent.father="cccc"//会改变
+// console.log(obj);
+
+
+// let obj={
+//     name:"小a"
+// }
+// console.log("name" in obj);//判断obj中是否有该属性，布尔型
+// console.log(obj.hasOwnProperty('name'));//判断obj中是否有该属性，布尔型
+// if("name" in obj){
+//     console.log("有该属性");
+// }
+
+
+// function Person(){
+//     this.name="小明"
+// }
+// let student1=new Person();
+// Person.prototype.age="12"
+// console.log(student1);
+// console.log("name" in student1);//in 都能获取
+// console.log(student1.hasOwnProperty('name'));//只能获取内部属性
+
+// var arr=[1,2,3,4,5];
+// console.log("10" in arr);//判断数组里是否有
+
+
+let obj={
+    name:"小明",
+    age:"12",
+    school:"heida"
+}
+delete obj.school;//删除属性
+console.log(obj);
+
+</script> 
+</body>
+</html>
