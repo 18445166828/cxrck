@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.4.1.js"></script>
+</head>
+<body>
+<script>
+// $.get("test.json",function(res){
+// console.log(res);
+// },)
+// console.log("123");
+
+
+// //异步
+// var a=10;
+// var b=20;
+// for(vari=0;i<10;i++){
+
+// }
+// //event loop
+// setTimeout(function(){
+//     console.log(b);
+// },1000)
+// console.log(i);
+//回调地狱
+// $.get("a.json",function(res){
+// console.log(res);
+//  $.get("b.json",function(res){
+//     console.log(res);
+//      $.get("c.json",function(res){
+//         console.log(res);
+//      })
+//  })
+// })
+
+//捕获异常
+// new Promise(function(resolve,reject){
+//     $.get("a.json",function(res){
+//         console.log(res); 
+//         resolve(res);//调用成功
+//         // reject();//调用失败
+//     })
+// }).then(function(res){
+// console.log("成功",res);
+// }).catch(function(){
+// console.log("失败");
+// })
+//捕获异常2
+// new Promise(function(resolve,reject){
+//     $.get("a.json",function(res){
+//         console.log(res); 
+//         resolve(res);//调用成功
+//         // reject();//调用失败
+//     })
+// }).then(function(res){
+// console.log("成功",res);
+// },function(){
+// console.log("失败");
+// })
+
+function getData(url){
+    return new Promise(function(resolve,reject){
+     $.get(url,function(res){
+         resolve(res);
+     })
+})
+}
+getData("a.json").then(function(res){
+    console.log(res);  
+    return getData("b.json")
+}).then(function(res){
+    console.log(res);
+    return getData("c.json")
+}).then(function(res){
+    console.log(res);
+})
+
+
+// let pro1=new Promise(function(resolve,reject){
+//     $.get("a.json",function(res){
+//         resolve();       
+//     })
+// })
+// let pro2=new Promise(function(resolve,reject){
+//     $.get("b.json",function(res){
+//         resolve();       
+//     })
+// })
+// let pro3=new Promise(function(resolve,reject){
+//     $.get("c.json",function(res){
+//         resolve();       
+//     })
+// })
+// Promise.all([pro1,pro2,pro3]).then(function(){
+//     console.log("成功");  
+// }).catch(function(){
+//     console.log("失败");  
+// })
+// //.all捕获全部成功返回成功
+// //.race捕获第一个成功就返回成功
+
+</script>
+</body>
+</html>
