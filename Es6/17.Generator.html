@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+// function关键字与函数名之间有一个星号
+// yield表达式，定义不同的内部状态
+// 调用next(可传参)方法才会遍历下一个内部状态 参数表示上一个yield表达式
+
+    // function* helloWorldGenerator() {
+    //   yield 'hello';
+    //   yield 'world';
+    //   return 'ending';
+    // }
+
+    // var hw = helloWorldGenerator();
+    // console.log(hw.next());
+    // console.log(hw.next());
+    // console.log(hw.next());
+
+    function* foo(x) {
+      var y = 2 * (yield (x + 1));
+      var z = yield (y / 3);
+      return (x + y + z);
+    }
+    var a = foo(5);
+    console.log(a.next());
+    console.log(a.next(2));
+    console.log(a.next(3));
+    // console.log(a.next());
+    
+    
+    
+
+    // var a = foo(5);
+    // console.log(a.next());
+    // console.log(a.next(6));
+    // console.log(a.next(12));
+
+    //解决异步编程
+    // function request(url){
+    //   $.get(url,function(res){
+    //     a.next(res);
+    //   })
+    // }
+    // function* foo(){
+    //   console.log(yield request("a.json"));
+    //   console.log(yield request("b.json"));
+    //   console.log(yield request("c.json"))
+    // }
+    // var a = foo();
+    // a.next()
+  </script>
+</body>
+</html>
