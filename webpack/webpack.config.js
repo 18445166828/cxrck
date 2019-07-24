@@ -15,8 +15,21 @@ module.exports = {
         test:/\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
-          use: "css-loader"
+          use: "css-loader",
+          publicPath:"../"
         })
+      },{
+        test:/\.(png|jpg|gif)/,
+        use:[{
+            loader:"url-loader",
+            options:{
+              limit:300,
+              outputPath:"image/"
+            }
+        } ]
+      },{
+        test:/\.html$/,
+        loader:'html-withimg-loader'
       }
     ]
   },
