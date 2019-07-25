@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // let str="hello word";
+    // console.log(str.indexOf(("hello")));
+    // console.log(str.includes("hello"));
+
+    // //定义正则表达式
+    // let reg=/hello/;
+    // console.log(reg.test(str));
+    // console.log(reg.exec(str));//返回数组
+    // //定义2
+    // let reg2=new RegExp('hello');
+    // console.log(reg2.test(str));
+    // console.log(reg2.exec(str));//返回数组
+    
+    //匹配 贪心模式
+    // reg = /c{1,2}/; //{出现的次数}，{一个，或两个}按多的返回，{一个，}一个或更多
+    // str='cainiao'; 
+    // console.log(reg.exec(str));
+    // // *表示0次或者多次，等同于{0,},c* 和 c{0,} 是一个意思。
+    // // +表示一次或者多次，等同于{1,},c+ 和 c{1,} 是一个意思。 
+    // // ?表示0次或者1次，等同于{0,1},c? 和 c{0,1} 是一个意思。 
+    //匹配2 非贪心
+    // reg = /c{1,}?/; //? 正则表达式是非贪心模式，所以只会匹配一个。 
+    // str='1ccccc'; 
+    // console.log(reg.exec(str));
+    
+    //  /^开头/  /结尾$/   /^c$/只能有从
+    // reg = /^c$/;
+    // str='caaacccc';
+    // console.log(reg.exec(str));
+
+    //‘.’会匹配字符串中除了换行符\n之外的所有字符
+    // reg = /./;//匹配一个     reg = /\./;匹配‘.’
+    // str='cainiaoccc';
+    // console.log(reg.exec(str));
+
+    // reg = /^b|c.+/;
+    // str='acainiao'; 
+    //console.log(reg.exec(str));
+
+
+    // 字符集合[abc] 表示a或者b或者c中的任意一个字符。
+    // reg = /^[abc]/; 
+    // str='bbs.blueidea.com'
+    // console.log(reg.exec(str));
+
+    // [a-z],[A-Z],[0-9]，分别表示小写字母，大写字母，数字。
+    // reg = /^[a-zA-Z][a-zA-Z0-9_]+/; 
+    // str='test';
+    // console.log(reg.exec(str));
+
+    // 反字符集合[^abc]
+    //  reg = /[^abc]/; 
+    //  str='bbs.blueidea.com'
+    //  console.log(reg.exec(str));
+
+    // 边界\b  空格也占边界
+    // reg = /\bc/; //以c开头   /c\b/以c结尾
+    // str='cainiao';
+    // str2='维生素c'//中文都可以匹配
+    // console.log(reg.exec(str));
+
+    // 非边界\B
+    // let reg = /\Bc/;
+    // let str='cainiao';
+    // console.log(reg.exec(str));
+
+    // 数字与非数字 \d表示数字的意思,\D表示非数字
+
+    // \f匹配换页符，\n匹配换行符，\r匹配回车，\t匹配制表符，\v匹配垂直制表符。
+    // reg = /\s.+/; 
+    // str='This is a test  String.'; 
+    // console.log(reg.exec(str));
+
+    // \w表示单词字符，等同于字符集合[a-zA-Z0-9_]。
+
+    // 反向引用  \1表示第一个子集，数字表示索引
+    // reg = /(\w)(\w)\2\1/; 
+    // str='abba'; 
+    // console.log(reg.exec(str));
+
+    // 括号（2）
+    // (?:pattern) ?:不记录正则表达式子集
+    // reg = /^(?:b|c).+/; 
+    // str='bbs.blueidea.com';
+    // 正向预查 形式：(?=pattern)  ?=表示不属于返回的一部分
+    // reg = /cainiao(?=8)/;
+    // str='cainiao8';
+    // console.log(reg.exec(str));
+    // 反向预查 形式(?!pattern)和?=恰好相反，要求字符串的后面不能紧跟着某个pattern
+    //  reg = /blue(?!idea)/; 
+    //  str='blueidea'; 
+    //  console.log(reg.exec(str));//null
+
+    //  匹配元字符
+    // reg = /\*/; //需要转义
+    // str='c*？';
+    // console.log(reg.exec(str));
+
+    // 不区分大小写，修饰符i 
+    // var reg = /b/i; 
+    // var str = 'BBS'; 
+    // console.log(reg.exec(str));
+
+    // 行首行尾，修饰符m
+    // var reg = /^b/m; 
+    // var str = 'test\nbbs';
+    // console.log(reg.exec(str)); //= comsole.log(str.match(reg))
+
+
+    // 替换
+    // let str="abababa";
+    // let reg=/a/g;//全局替换
+    // var a=str.replace(reg,"-")
+    // console.log(a);
+
+    //交换位置
+    let str="hello word";
+    let reg=/(?<a>hello) (?<b>word)/;//groups
+    let a=str.replace(reg,"$2 $1")//分组后在replace可通过$换位置
+    console.log(a);
+    
+
+    
+    </script>
+</body>
+</html>
