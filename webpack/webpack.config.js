@@ -38,8 +38,18 @@ module.exports = {
           fallback: "style-loader",
           use: [{loader:"css-loader",
                  options:{importLoaders:1}
-        },'postcss-loader']     
+        },'postcss-loader'] ,
+           publicPath:"../"
         })
+      },{
+          test:/\.(js$)/,
+          use:{
+            loader:'babel-loader',
+            options:{
+              presets:["@babel/preset-env"]
+            }
+          },
+          exclude:/node_modules/
       }
     ]
   },
