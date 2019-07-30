@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- 表单 -->
+        <!-- lazy 相当于blur失去焦点 -->
+        <!-- number 获取的值不是字符串 是数值型 -->
+        <!-- trim 去除当前文本框的前后空格 -->
+        <input type="text" v-model="msg" placeholder="请输入用户名">
+        <input type="text" v-model.lazy="msg" placeholder="请输入用户名">
+        <input type="text" v-model.number="msg" placeholder="请输入用户名">
+        <input type="text" v-model.trim="msg" placeholder="请输入用户名">
+        用户名：{{msg}}
+        
+        <!-- 复选 -->
+        <br/>
+        <input v-model="hobbyArr" type="checkbox" name="hobby" value="篮球">篮球
+        <input v-model="hobbyArr" type="checkbox" name="hobby" value="足球">足球
+        <input v-model="hobbyArr" type="checkbox" name="hobby" value="排球">排球
+        <input v-model="hobbyArr" type="checkbox" name="hobby" value="羽毛球">羽毛球
+        我的爱好：{{hobbyArr}}
+        
+        <!-- 单选 -->
+        <br/>
+        <input v-model="sexData" type="radio" name="sex" value="男">男
+        <input v-model="sexData" type="radio" name="sex" value="女">女
+        性别：{{sexData}}
+         
+        <!-- 下拉栏 -->
+        <br/>
+        <select name="" id="" v-model="school">
+            <option value="黑大">黑大</option>
+            <option value="农大">农大</option>
+            <option value="理工">理工</option>
+        </select>
+        学校：{{school}}
+    </div>
+   <script>
+    new Vue({
+        el:"#app",
+        data:{
+            msg:"",
+            hobbyArr:[],
+            sexData:"",
+            school:"农大"
+        }
+    })
+   </script> 
+</body>
+</html>
