@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <textb></textb>
+      
+    </div>
+
+    <script>
+
+        new Vue({
+            el: "#app",
+            data: {
+                num: 0
+            },
+            methods: {
+             
+            },
+            components: {
+                "textb": {
+                    template: 
+                    //只能有一个根元素
+                    `<div>
+                    <h1>hello {{str}}</h1>
+                    <h1>hello word</h1>
+                    <h1>hello word</h1></div>`,
+                data(){//组建里的data必须是个函数
+                    return{
+                       str:"word1"  
+                    }
+                }
+
+                }
+            }
+        });
+
+    </script>
+</body>
+
+</html>
