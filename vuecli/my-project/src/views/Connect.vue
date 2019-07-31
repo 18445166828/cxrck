@@ -13,9 +13,9 @@
 import World from "../components/HelloWorld"
 export default {
    data() {
-    //    return {
-    //      msg:'hello'  
-    //    }
+       return {
+        //  msg:'hello'  
+       }
    }, 
    components:{
      World

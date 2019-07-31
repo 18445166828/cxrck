@@ -21,7 +21,11 @@ export default new Router({
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
       // 别名
-      alias:"/aboutme"
+      alias:"/aboutme",
+      beforeEnter:(to,from,next)=>{
+       console.log(to,from);
+       next(true)
+      }
     },
     {
       path    :'/connect',
