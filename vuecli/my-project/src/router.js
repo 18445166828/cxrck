@@ -49,6 +49,10 @@ export default new Router({
     {
       path:"/connect/gotoTest2/:username/:userage",
       redirect:"/connect/test2/:username/:userage"
+    },
+    {
+      path:"*",
+      component:()=>import("./views/Error404.vue")
     }
   ]
 })
