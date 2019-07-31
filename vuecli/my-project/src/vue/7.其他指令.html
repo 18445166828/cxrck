@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+<style>
+[v-cloak]{
+    display: none;
+}
+</style>
+<body>
+    <!-- v-cloak 渲染完成后显示 -->
+    <!-- v-pre 原样输出  -->
+    <!-- v-once 只渲染一次 -->
+    <div id="app">
+        <div v-cloak>{{msg}}</div>
+        <div v-pre>{{msg}}</div>
+        <button @click.once="addHandle">add</button>
+        
+        <div>{{num}}</div>
+    </div>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                msg:"hello world",
+                num:0
+            },
+            methods:{
+                addHandle(){
+                    this.num++
+                }
+            }
+        })
+    </script>
+</body>
+</html>

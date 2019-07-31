@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+<style>
+*{
+    /* margin: 0; */
+    padding: 0;
+}
+td{
+    padding: 2px;
+}
+.active{
+    background-color: beige;
+}
+</style>
+<body>
+    <div id="app">
+    <input id="search" v-model="goodSeach" placeholder="搜索" ><button @click="search">搜索</button>
+    <br/>
+    <input id="name" v-model="goodName" placeholder="名称"><input id="price" v-model="goodPrice" placeholder="商品价格"><button  @click="add">添加</button>
+    <table>
+        <tr>
+            <td>选择</td>
+            <td>商品名称</td>
+            <td>商品价格</td>
+            <td>操作</td>
+        </tr>
+        <tr :class="{active:val.isCheck}" @click="check(index)" v-for="(val,index) in product">
+            <td><input type="checkbox"  name="choose" ></td>
+            <td>{{val.name}}</td>
+            <td>{{val. price}}</td>
+            <td><button type="button" class="btn btn-default btn-xs">删除</button></td>
+        </tr>
+        <tr>
+            <td colspan="2">价格：</td>
+            <td colspan="2">{{gsum}}</td>
+        </tr>
+    </table>
+    <button>删除选中</button>
+    </div>
+    <script>
+    new Vue({
+        el:"#app",
+        data:{
+           goodSeach:"",
+           goodName:"",
+           goodPrice:"",
+           nowId="5",
+           product:[
+             {
+                 id:"1",
+                 name:"衣服",
+                 price:"123", 
+                 isCheck:false,
+             },
+             {
+                 id:"2",
+                 name:"裤子",
+                 price:"456",
+                 isCheck:false,
+             },
+             {
+                 id:"3",
+                 name:"鞋",
+                 price:"1223",
+                 isCheck:false,
+             },
+             {
+                 id:"4",
+                 name:"帽子",
+                 price:"2323",
+                 isCheck:false,
+                
+             },
+             {
+                 id:"5",
+                 name:"手套",
+                 price:"20",
+                 isCheck:false, 
+             }
+           ]
+        },
+        methods:{
+            check(index){
+               this.product[index].isCheck=!this.product[index].isCheck;   
+            },
+            add(){
+                this.product.push(
+                   {
+                    id:this.nowId++,
+                    name:this.goodName,
+                    price:this.goodPrice,
+                    isCheck:false, 
+                   } 
+                );
+            },
+            search(){
+                let newArr=[];
+                newArr=this.product.filter((item)=>{
+                    if(item.name.includes(this.goodSeach)){
+                        return item
+                    }
+                })
+                 this.product=newArr;
+             }
+           
+        },
+        computed:{
+            gsum(){
+              let num=0;
+              this.product.map(function(item){
+                  if(item.isCheck){
+                    num+=parseInt(item.price) 
+                  }
+              })
+              return num;
+            }
+        }
+    })
+    
+    </script>
+</body>
+</html>

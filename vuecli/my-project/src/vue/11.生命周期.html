@@ -1,0 +1,71 @@
+<!-- created(){} 向后台请求数据
+mounted(){} 对数据进行处理 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div>
+            <button @click="add">add</button>
+            <button @click="destroyHandle">ddestroy</button>
+        </div>
+        <h1>{{num}}</h1> 
+    </div>
+    
+    <script>
+       
+        new Vue({
+            el:"#app",
+            data:{
+        num:0,
+        timer:null
+      },
+      methods:{
+        add(){
+            this.num++
+        },
+        destroyHandle(){
+            this.$destroy()
+            clearInterval(this.timer)
+        }
+      },
+      beforeCreate() {
+        console.log('beforeCreate');
+        
+      },
+      created () {
+        console.log('created');
+        this.timer= setInterval(function(){
+            console.log(123);
+            
+        },1000)
+      },
+      beforeMount() {
+        console.log('beforeMount');
+      },
+      mounted() {
+        console.log('mounted');
+      },
+      beforeUpdate () {
+        console.log('beforeUpdate');
+      },
+      updated() {
+        console.log('updated');
+      },
+      beforeDestroy() {
+        console.log('beforeDestroy');
+        clearInterval(this.timer)
+      },
+      destroyed() {
+        console.log('destroyed');
+      },
+        })
+    </script>
+</body>
+</html>
