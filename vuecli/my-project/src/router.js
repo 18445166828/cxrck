@@ -19,12 +19,36 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
+      // 别名
+      alias:"/aboutme"
     },
     {
       path    :'/connect',
       name    :'connect',
-      component:()=>import('./views/Connect.vue')
+      component:()=>import('./views/Connect.vue'),
+      children:[
+        {
+          path:"/connect/test1",
+          name:"test1",
+          component:()=>import('./views/Test1.vue')
+        },
+        {
+          path:"/connect/test2/:username/:userage",
+          name:"test2",
+          component:()=>import('./views/Test2.vue')
+        }
+      ]
+    },
+    // 重定向
+    {
+      path:"/mine",
+      redirect:"/"
+    },
+    //传参重定向
+    {
+      path:"/connect/gotoTest2/:username/:userage",
+      redirect:"/connect/test2/:username/:userage"
     }
   ]
 })
