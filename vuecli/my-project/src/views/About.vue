@@ -1,5 +1,23 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div>
+    <h1>this is a page </h1>
+    <Helloworld :msg="str"></Helloworld>
   </div>
 </template>
+<script>
+import Helloworld from '../components/HelloWorld'
+export default {
+  name:'about',
+  data(){
+    return {
+      str:"hello"
+    }
+  },
+  components:{
+    Helloworld
+  }
+  
+}
+</script>
+
+
