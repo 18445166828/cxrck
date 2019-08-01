@@ -44,6 +44,11 @@ export default new Router({
         }
       ]
     },
+    {
+      path:"/test3",
+      name:"test3",
+      component:()=>import("./views/Test3.vue")
+    },
     // 重定向
     {
       path:"/mine",

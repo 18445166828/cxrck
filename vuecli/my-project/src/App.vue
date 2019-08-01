@@ -10,7 +10,8 @@
       <router-link to="/about">About</router-link>|
       <router-link to="/connect">Connect</router-link>|
       <router-link to="/mine">Mine</router-link>|
-      <router-link to="/aboutme">AboutMe</router-link>
+      <router-link to="/aboutme">AboutMe</router-link> |
+      <router-link to="/test3">Test3</router-link>
     </div>
     <div class="fadeHeader">
       <transition name="fade">
