@@ -6,7 +6,7 @@
         </header>
         <nav>
             <ul>
-                <li @click="clickHandle(item)" v-for="item in navList" :key="item.id">{{item.title}}</li>
+                <li @click="clickHandle(item)" v-for="(item,index) in navList" :key="index">{{item.title}}</li>
             </ul>
         </nav>
     </div>
@@ -81,7 +81,6 @@ export default {
     position  : fixed;
     top       : 0;
     font-size : 0.8rem;
-    position  : relative;
     text-align: center;
 }
 .nav-container header p{
