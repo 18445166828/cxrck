@@ -2,7 +2,7 @@
   <div>
     <swiper :options="swiperOption">
       <swiper-slide
-        @click.native="clickHandie(item.id)"
+        @click.native="clickHandle(item.id)"
         class="sweper-item"
         v-for="item in booklist"
         :key="item.id"
@@ -64,7 +64,7 @@ export default {
         console.log(res.data.subject_collection_items);
       });
     },
-    clickHandie(id) {
+    clickHandle(id) {
       this.$router.push({
         name: "bookdetail",
         params: {
