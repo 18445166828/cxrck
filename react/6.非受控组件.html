@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        class Foo extends React.Component{
+            constructor(props){
+                super(props)
+                this.state={
+                }
+                this.input = React.createRef();
+                this.inp1 = React.createRef();
+            }
+            submitHandle(event){
+                console.log(this.inp1.current.value)
+                event.preventDefault();
+            }
+            render(){
+                return(
+                    <div>
+                       <form onSubmit={this.submitHandle.bind(this)}>
+                        <input name="inp1" ref={this.inp1} type="text"/>
+                        <input name="inp2" ref={this.input} type="text"/>
+                        <input name="inp3" ref={this.inp3} type="text"/>
+                        <input name="inp4" ref={this.inp4} type="text"/>
+                        <button type="submit">submit</button>
+                        </form>
+                    </div> 
+                )
+            }
+        }
+        ReactDOM.render(
+            <Foo/>,
+            document.getElementById("root")
+        )
+    </script>
+</body>
+
+</html>
