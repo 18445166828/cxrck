@@ -13,15 +13,23 @@ import {
  import Test1 from "./component/Test1"
  import Test2 from "./component/Test2"
 
+ const Foo=({match})=>{
+  //  console.log(match);
+   return (
+  <h1>hello{match.params.id}</h1>
+   )
+ }
 function App() {
   return (
     <div className="App">
      <Router>
-       <Link to="/">test1</Link>
+       <Link to="/54321">test1</Link>
        <Link to="/test2">test2</Link>
+       <Link to="/foo/123456">foo</Link>
        <Switch>
+       <Route path="/foo/:id" component={Foo}></Route>
        <Route path="/test2" component={Test2}></Route>
-       <Route path="/" component={Test1}></Route>
+       <Route path="/:id" component={Test1}></Route>
        </Switch>
      </Router>
     </div>
