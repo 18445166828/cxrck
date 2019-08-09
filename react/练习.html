@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/babel.min.js"></script>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<style>
+    .table {
+        width: 1000px;
+        margin: auto;
+    }
+
+    .row {
+        width: 1000px;
+        margin: 20px auto;
+    }
+</style>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+            class Formbody extends React.Component{
+                    constructor(props){
+                        super(props)
+                        this.state={
+                         dataList:[
+                            {
+                                id:1,
+                                formcase:"上课",
+                                formtime:"2018-09-14",
+                                usetime:2,
+                            },
+                            {
+                                id:2,
+                                formcase:"吃饭",
+                                formtime:"2018-09-14",
+                                usetime:2,
+                            },
+                            {
+                                id:3,
+                                formcase:"午休",
+                                formtime:"2018-09-14",
+                                usetime:2,
+                            },
+                            {
+                                id:4,
+                                formcase:"篮球",
+                                formtime:"2018-09-14",
+                                usetime:2,
+                            },
+                            {
+                                id:5,
+                                formcase:"聚会",
+                                formtime:"2018-09-14",
+                                usetime:2,
+                            }
+                        ]
+                        }
+                    }
+render(){
+    let str= this.state.dataList.map((item,index,arr)=>{
+                    console.log(item,index)
+                    return(
+                        {index},{item}
+                    )
+                })
+
+    
+    console.log(str);
+return (
+<div>
+    <table className="table">
+        <thead className="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">代办事宜</th>
+                <th scope="col">代办时间</th>
+                <th scope="col">预计用时</th>
+                <th scope="col">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row"><input type="radio"></input></th>
+                <td>{this.state.dataList[0].formcase}</td>
+                <td>{this.state.dataList[0].formtime}</td>
+                <td>{this.state.dataList[0].usetime}</td>
+                <td><button>删除</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+)
+}
+            }
+                ReactDOM.render(
+                    <Formbody/>,
+                    document.getElementById("root")
+                )
+    </script>
+</body>
+
+</html>

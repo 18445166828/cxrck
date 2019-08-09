@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        class Todoform extends React.Component{
+            constructor(props){
+                super(props)
+                this.idcount=6
+                this.formVal = {
+
+                }
+            }
+            changeVal(event){
+                this.formVal[event.target.name] = event.target.value;
+            }
+            subHandle(event){
+                this.formVal.id=++this.idcount;
+                this.formVal.isActive = false;
+                this.props.addList(this.formVal)
+                event.preventDefault();
+            }
+            render(){
+                return(
+                    <div>
+                        <form class="form-inline" onSubmit={this.subHandle.bind(this)}>
+                        <input onChange={this.changeVal.bind(this)} name="info" type="text" class="form-control mb-2 mr-sm-2" placeholder="待办事项"/>
+                        <input onChange={this.changeVal.bind(this)} name="time" type="date" class="form-control mb-2 mr-sm-2"/>
+                        <div class="input-group mb-2 mr-sm-2">
+                        <input onChange={this.changeVal.bind(this)} name="count" type="text" class="form-control" placeholder="待代办时间"/>
+                        </div>
+                        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                        </form>
+                    </div>
+                )
+            }
+        }
+        class Todotable extends React.Component{
+            constructor(props){
+                super(props)
+            }
+            trClick(index){
+                this.props.checkLine(index)
+            }
+            delLine(index,event){
+                this.props.delHandle(index)
+                event.stopPropagation();
+            }
+            delCheck(){
+                this.props.delChecked()
+            }
+            render(){
+                let thisList = this.props.items;
+                let sum=0;
+                console.log(thisList);
+                let trStr = thisList.map((item,index)=>{
+                    let style = null
+                    if(item.isActive){
+                        sum+=item.count;
+                        style={
+                            backgroundColor:"gray"
+                        }
+                    }
+                    return(
+                        <tr style={style} onClick={this.trClick.bind(this,index)} key={item.id}>
+                            <th scope="row">
+                                <input type="checkbox" readOnly checked={item.isActive?true:false}/>
+                            </th>
+                            <td>{item.info}</td>
+                            <td>{item.time}</td>
+                            <td>{item.count}</td>
+                            <td>
+                                <button type="button" class="btn btn-primary btn-sm" onClick={this.delLine.bind(this,index)}>删除</button>
+                            </td>
+                        </tr>
+                    )
+                })
+                return(
+                    <div>
+                        <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">代办事项</th>
+                                <th scope="col">代办时间</th>
+                                <th scope="col">预计用时</th>
+                                <th scope="col">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {trStr}
+                            <tr>
+                                <td><button type="button" class="btn btn-primary btn-sm" onClick={this.delCheck.bind(this)}>删除选中</button></td>
+                                <td colSpan="4">{sum}</td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                )
+            }
+        }
+        class Todolist extends React.Component{
+            constructor(props){
+                super(props)
+                this.state={
+                    dataList:[
+          {
+              id:0,
+              isActive:false,
+              info:"上课",
+              count:2,
+              time:'2018-09-14'
+            },{
+              id:1,
+              isActive:false,
+              info:'吃饭',
+              count:2,
+              time:'2018-09-14'
+            },{
+              id:2,
+              isActive:false,
+              info:'午休',
+              count:2,
+              time:'2018-09-14'
+            },{
+              id:3,
+              isActive:false,
+              info:'篮球',
+              count:2,
+              time:'2018-09-14'
+            },{
+              id:4,
+              isActive:false,
+              info:'聚会',
+              count:2,
+              time:'2018-09-14'
+            },{
+              id:5,
+              isActive:false,
+              info:'上课',
+              count:2,
+              time:'2018-09-14'
+            }
+          ]
+                }
+            }
+            checkLine(index){
+                let thisList =this.state.dataList;
+                thisList[index].isActive = !thisList[index].isActive
+                this.setState({
+                    dataList:thisList
+                })
+                
+            }
+            addHandle(obj){
+                let thisList =this.state.dataList;
+                thisList.push(obj);
+                this.setState({
+                    dataList:thisList
+                })
+            }
+            delHandle(index){
+                let thisList =this.state.dataList;
+                thisList.splice(index,1)
+                this.setState({
+                    dataList:thisList
+                })
+            }
+            delChecked(){
+                let thisList =this.state.dataList;
+                thisList = thisList.filter((item)=>{
+                    if(!item.isActive){
+                        return item
+                    } 
+                })
+                this.setState({
+                    dataList:thisList
+                })
+            }
+            render(){
+                return(
+                    <div>
+                        <Todoform addList={this.addHandle.bind(this)}/>
+                        <Todotable delChecked={this.delChecked.bind(this)} delHandle={this.delHandle.bind(this)} checkLine={this.checkLine.bind(this)} items={this.state.dataList}/>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <Todolist/>,
+            document.getElementById("root")
+        )
+    </script>
+</body>
+</html>  

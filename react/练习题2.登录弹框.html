@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.min.js"></script>
+    <style>
+        .mosk{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,.5);
+        }
+        .dia-content{
+            width: 400px;
+            height: 300px;
+            border:1px solid black;
+            position: absolute;
+            top: 50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            background-color: #fff;
+        }
+        .dia-header{
+            padding:10px;
+            height: 50px;
+            background-color: black;
+            color:#fff;
+        }
+        .dia-header span{
+            float:right;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        class BtnComp extends React.Component{
+            constructor(props){
+                super(props)
+            }
+            clickHandle(name){
+                this.props.getClick(name)
+            }
+            render(){
+                return(
+                    <div>
+                        <button onClick={this.clickHandle.bind(this,this.props.name)}>{this.props.name}</button>
+                    </div>
+                )
+            }
+        }
+        class Dialogs extends React.Component{
+            constructor(props){
+                super(props)
+            }
+            closeHandle(){
+                this.props.isShow("");
+            }
+            render(){
+                console.log(this.props.witchComp)
+                let style = {
+                    display:this.props.witchComp?"block":"none"
+                }
+                return(
+                    <div>
+                        <div className="mosk" style={style}>
+                            <div className="dia-content">
+                                <div className="dia-header">{this.props.witchComp}
+                                    <span onClick={this.closeHandle.bind(this)}>X</span>
+                                </div>
+
+                                <div className="dia-inner">
+                                    {this.props.witchComp=="登陆"?<Login/>:<Register/>}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )
+            }
+        }
+        class DiaContent extends React.Component{
+            constructor(props){
+                super(props)
+                this.state={
+                    comp:""
+                }
+            }
+            btnClickHandle(name){
+                this.setState({
+                    comp:name
+                })
+            }
+            
+            render(){
+                return(
+                    <div>
+                        <BtnComp getClick={this.btnClickHandle.bind(this)} name="登陆"/>
+                        <BtnComp getClick={this.btnClickHandle.bind(this)} name="注册"/>
+                        <Dialogs witchComp={this.state.comp} isShow={this.btnClickHandle.bind(this)}/>
+                    </div>
+                    
+                )
+            }
+        }
+        function Login() {
+            return(
+                <div>登陆</div>
+            )
+        }
+        function Register() {
+            return(
+                <div>注册</div>
+            )
+        }
+        ReactDOM.render(
+            <DiaContent/>,
+            document.getElementById("root")
+        )
+    </script>
+</body>
+
+</html>
