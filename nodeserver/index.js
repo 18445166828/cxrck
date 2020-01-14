@@ -24,13 +24,15 @@ app.use(koaBody());
 cloud.init({
   secretId: 'AKIDXzH9l6SYFlocNypUP7ZaMuENTYy9k6rW',
   secretKey: 'iAOM8fsqqiOo37xWqz4uVq7Qo9Qo6e5J',
-  env:"dev-mkb4e"
+  env:"text-cb04d1"
   // env:'test-41b8dc'   
 });
 
 
 let user = require('./controller/user.js');
+let student = require('./controller/student.js');
 router.use('/user', user.routes());
+router.use('/student', student.routes());
 
 //使用router
 app.use(router.routes());
