@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+</style>
+
+<body>
+    <button id="btn">click</button>
+    <script>
+        var oBtn = document.getElementById('btn');
+        function debounce(fn, delay) {
+            var Timer = null;
+            return function () {
+                clearTimeout(Timer);
+                Timer = setTimeout(function () {
+                    //改变this指向
+                    fn.apply(this);
+                //改变this指向 或者把setTimeout改成箭头函数
+                }.bind(), delay);
+            }
+        }
+
+        oBtn.onclick = debounce(function () {
+            console.log(Date.now());
+        }, 3000);
+
+    </script>
+</body>
+
+</html>

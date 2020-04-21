@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //栈 先入后出 数组模拟栈  push() pop()
+
+        function calPoints(ops) {
+            var res = [];
+            var pre1 = 0;
+            var pre2 = 0;
+            ops.forEach(item => {
+                switch (item) {
+                    case "d":
+                    if(res.length>0){
+                        var pre1=res.pop();
+                        res.push(pre1,pre1*2);
+                    }
+                        break;
+                    case "c":
+                    if(res.length>0){
+                        res.pop()
+                    }
+                        break;
+                    case "+":
+                    if(res.length>1){
+                        pre1=res.pop();
+                        pre2=res.pop();
+                        res.push(pre2,pre1,pre1+pre2);
+                    }
+                        break;
+                    default:
+                    res.push(item*1)//*1转化成数值;
+                    break;
+                }
+            });
+            //数组元素累加器
+            return res.reduce((total,num)=>total+num)
+
+        }
+        console.log(calPoints(["5", "2", "c", "d", "+"]));
+
+    </script>
+</body>
+
+</html>

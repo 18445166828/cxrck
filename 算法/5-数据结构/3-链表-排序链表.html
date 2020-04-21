@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 定义链表 -->
+    <!-- 对象为节点  node{val:xxx,next:} value值和指针域 -->
+    <!-- 0x12  node{val:xxx,next:0x15}
+         0x15  node{val:yyy,next:0x20} -->
+    <script>
+        //创建节点
+        class Node{
+            constructor(val){
+                this.val=val;
+                this.next=undefined;
+            }
+        }
+        //创建链表
+        class NodeList{
+            constructor(arr){
+                this.head=new Node(arr[0]);//表头节点
+                var temp=this.head;
+                for(var i=1;i<arr.length;i++){
+                    temp.next=new Node(arr[i]);
+                    temp=temp.next;
+                }
+                return this.head;
+                //构造器的返回值是基本数据类型 函数也是构造器 对整个构造器没有影响
+                //返回值是引用类型 相当于整个new出来的对象就是这个返回值 输出结果就是返回值
+            }
+        }
+        var nl=new NodeList([5,3,2,6,1]);
+        // console.log(nl);
+        while(nl){
+            console.log(nl.val);
+            nl=nl.next;
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .parent{
+        /* height: 20px;   第一种 */
+        /* overflow: hidden;第二种 */
+    }
+
+    .chilren{
+        /* width: 200px;
+        height: 200px; */
+        /* float: left; */
+    }
+    .c1{
+        background: beige;
+    }
+    .c2{
+        background: goldenrod;
+    }
+    .footer{
+        height: 100px;
+        width: 100px;
+        background: saddlebrown;
+    }
+
+    /* 第三种 */
+    .clearfix::after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+</style>
+<body>
+    <div class="parent clearfix">
+        <div class="chilren c1">111</div>
+        <div class="chilren c2">222</div>
+    </div>
+    <div class="footer">333</div>
+</body>
+</html>

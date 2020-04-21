@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //foreach+indexOf
+    var arr=[1,2,3,3,4,2];
+    var arr2=[];
+    arr.forEach((item)=>{
+        if(arr2.indexOf(item)===-1){
+            arr2.push(item)
+        }
+    })
+    // console.log(arr2)
+
+    //Array.from+Set
+    var arr=[1,2,3,3,4,2];
+    var arr2=[];
+    arr2=Array.from(new Set(arr));
+    console.log(arr2)
+
+    //...+Set
+    var arr=[1,2,3,3,4,2];
+    var arr2=[];
+    var arr2=[...(new Set(arr))];
+    console.log(arr2)
+
+    //利用include
+    function unique(arr){
+        var arr2=[];
+        for(var i=0;i<arr.length;i++){
+            if(!arr2.includes(arr[i])){
+                arr2.push(arr[i])
+            }
+        }
+        return arr2;
+    }
+    console.log(unique([1,2,3,3,4,2]));
+    
+   //利用map+includes
+   function unique1(arr){
+        var arr2=[];
+        arr.map(item=>{
+          return arr2.includes(item)?"":arr2.push(item)
+        })
+        return arr2;
+    }
+    console.log(unique1([1,2,3,3,4,2]));
+
+    //利用filter+includes
+    function unique2(arr){
+        var arr2=[];
+        arr.filter(item=>{
+           return arr2.includes(item)?"":arr2.push(item)
+        })
+        return arr2;
+    }
+    console.log(unique2([1,2,3,3,4,2]));
+
+    //双重for循环+splice
+    function unique3(arr){
+     for(var i=0;i<arr.length;i++){
+         for(var j=i+1;j<arr.length-i;j++){
+             if(arr[j]==arr[i]){
+                 arr.splice(j,1);
+                 arr.length--;
+                 j-=1;
+             }
+         }
+     }
+     return arr
+    }
+    console.log(unique3([1,2,3,3,4,2]));
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+#parent{
+    width: 200px;
+    height: 200px;
+    background: red;
+}
+
+#children{
+    width: 100px;
+    height: 100px;
+    background: blue;
+}
+</style>
+<body>
+    <div id="parent">
+        <div id="children"></div>
+    </div>
+    <a id="btn" href="http:www.baidu.com">百度</a>
+<script>
+  var oParent=document.getElementById("parent");
+  var oChildren=document.getElementById("children");
+  var oBtn=document.getElementById("btn");
+
+
+  oParent.addEventListener('click',function(){
+      console.log("parent");
+  },true);
+  //捕获true 冒泡flase
+
+  oParent.addEventListener('click',function(){
+      console.log("parent1");
+  },true);
+
+//   oParent.onclick=function(e){
+//       console.log("parent");      
+//   }
+//   oChildren.onclick=function(e){
+//       console.log("children");
+//       //阻止事件冒泡
+//       e.stopPropagation();   
+//     //   e.cancelBubble();  //ie浏览器
+//   }
+//   oBtn.onclick=function(e){
+//       console.log("百度");
+//       //阻止默认行为
+//     //   e.preventDefault();
+//     //    return false;
+//        e.returnValue=false;  //ie浏览器
+      
+//   }
+
+
+</script>
+</body>
+</html>
