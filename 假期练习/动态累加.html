@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //add(1)(2)(3)==6
+        function add(num) {
+            var sum = 0;
+            sum = sum + num;
+            return function add1(num1) {
+                sum = sum + num1
+                return function add2(num2){
+                    sum=sum+num2;
+                    return sum
+                }
+            }
+        }
+        console.log(add(1)(2)(3));
+
+        // add1(1)(2)(3)(4)(10)()==20
+        function add1(num) {
+          var sum=0;
+          sum=sum+num;
+          return function temp(num1){
+            // if(arguments.length===0){
+            //     return sum
+            // }else{
+                sum=sum+num1;
+                return temp;
+            // }
+          }
+        }
+        console.log(add1(1)(2)(3)(4)(10)());
+
+        // 实现sum(2,3)===sum(2)(3)
+        function sum(){
+            var num=arguments[0];
+            if(arguments.length===2){
+                return arguments[0]+arguments[1]
+            }else{
+                return function add(num1){
+                    return num+num1
+                }
+            }
+        }
+        console.log(sum(2,3));
+        console.log(sum(2)(3));
+        
+ 
+
+    </script>
+</body>
+
+</html>
