@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function search(arr,low,high,key){
+        if(low>high){
+            return -1;
+        }
+        let mid=parseInt((low+high)/2);
+        if(arr[mid]==key){
+            return mid
+        }else if(arr[mid]>key){
+            high=mid-1;
+            return search(arr,low,high,key);
+        }else if(arr[mid]<key){
+            low=mid+1;
+            return search(arr,low,high,key);
+        }
+    }
+    let arr=[1,2,3,4,5,6,7,8,9,10,26,45,26];
+    console.log(search(arr,0,12,10));
+    
+
+    </script>
+</body>
+</html>

@@ -19,7 +19,7 @@
                 return function add2(num2){
                     sum=sum+num2;
                     return sum
-                }
+                } 
             }
         }
         console.log(add(1)(2)(3));
@@ -29,12 +29,12 @@
           var sum=0;
           sum=sum+num;
           return function temp(num1){
-            // if(arguments.length===0){
-            //     return sum
-            // }else{
+            if(arguments.length===0){
+                return sum
+            }else{
                 sum=sum+num1;
                 return temp;
-            // }
+            }
           }
         }
         console.log(add1(1)(2)(3)(4)(10)());
