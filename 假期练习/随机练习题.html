@@ -10,20 +10,64 @@
 
 <body>
     <script>
-        function throttle(fn, delay) {
-            var startTime = 0;
-            return function() {
-                var nowTime = Date.now();
-                if (nowTime - startTime > delay) {
-                    fn.call(this);
-                    startTime = nowTime;
-                }
+        // function foo(a, b) {
+        //     d = b.split("").reverse();
+        //     c = a.split("").reverse();
+        //     var arr = []
+        //     for (let i = 0; i < d.length - 1; i++) {
+        //         if (d[i] == c[i]) {
+        //             arr.push(1)
+        //         } else {
+        //             arr.push(0)
+        //         }
+        //     }
+        //      if(arr.includes(0)){
+        //          return "no"
+        //      }else{
+        //          return "yes"
+        //      }
+        // }
+        // var a = "123.qq.com";
+        // var b = "qq.com"
+        // console.log(foo(a, b));
 
+        //     while(line=readline()){
+        //     var lines = line.split(" ");
+        //     var a = parseInt(lines[0]);
+        //     var b = parseInt(lines[1]);
+        //     print(a+b);
+        // }
+        // var a = readline();
+        //     var b = readline();
+        //        d=b.split("").reverse();
+        //        c=a.split("").reverse();
+        //        for(let i=0;i<d.length-1;i++){
+        //            if(d[i]=c[i]){
+        //                 print("yes")
+        //            }else{
+        //                print("no")
+        //            }
+        //        }  
+
+        var m="dvbvbav/s13424 faadsfssfasv/9880"
+        n = m.split("").
+        console.log(n);
+        var num=0;
+        for(i=num;i<n.length-1;i++){
+            var arr=[];
+            if(n[i]!=="/"){
+                arr.push(n[i]);
             }
+            
+        //    arr.push(n[i]);
+        //    console.log(arr);
+           
+        //     if(n[i]=="/"){
+        //         break;
+        //     }
         }
-        document.onmousemove = throttle(function () {
-            console.log(Date.now())
-        }, 2000)
+        console.log(arr);
+
 
     </script>
 </body>
