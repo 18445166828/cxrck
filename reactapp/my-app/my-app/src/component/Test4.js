@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import {
     BrowserRouter as Router,
     Route,  
@@ -29,14 +29,14 @@ export default class Test4 extends Component {
     render() {
         
         return (
-            <div>
+            <Fragment>
                 <Router>
                     <NavLink activeStyle={{color:"red"}} activeClassName="aa" to="/test1">test1</NavLink>
                     <NavLink isActive={()=>false} activeClassName="aa" to="/test2">test2</NavLink>
                     <Route path="/test1" component={Foo1}/>
                     <Route path="/test2" component={Foo2}/>
                 </Router>
-            </div>
+            </Fragment>
         )
     }
 }
