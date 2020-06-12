@@ -22,28 +22,28 @@
                     isCheckNo: true
                 }
             }
-    
             onChange = (event) => {
-                const {value} = this.state;
-                this.setState({
-                    value: event.target.value
-                });
-            };
-
-            showIsCheckNo = () => {
                 const {value, isCheckNo} = this.state;
-                const reg = /^1\d{10}$/;
-                this.setState({ 
+                const reg = /^1\d{9}$/;
+                this.setState({
+                    value: event.target.value,
                     isCheckNo:reg.test(value)
-                })
-                
+                });
+                // if(reg.test(value)){
+                //     this.setState({
+                //         isCheckNo: true
+                //     })
+                // }else {
+                //     this.setState({
+                //         isCheckNo: false
+                //     })
+                // }
             }
-
             render(){
                 const {value,isCheckNo} = this.state;
                 return (
                     <div>
-                    <input type='text' value={value} placeholder='请输入手机号' onChange={this.onChange} onBlur={this.showIsCheckNo}/>
+                    <input type='text' value={value} placeholder='请输入手机号' onChange={this.onChange}/>
                     { isCheckNo ? '' : <span style={{color:'red',fontSize:10}}>手机号格式错误</span> }
                     </div>
                 )

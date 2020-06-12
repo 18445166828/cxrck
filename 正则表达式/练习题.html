@@ -1,35 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
+    <input type="text">
     <script>
-    //   30CAC0040 取出40
-    // 3SFASDF92 取出92 
-    // let str='30CAC0040';
-    // let str2='3SFASDF92';
-    // let reg=/\d{2,}$/
-    // console.log(reg.exec(str));
-    // console.log(reg.exec(str2));
+        //   30CAC0040 取出40
+        // 3SFASDF92 取出92 
+        // let str='30CAC0040';
+        // let str2='3SFASDF92';
+        // let reg=/\d{2,}$/
+        // console.log(reg.exec(str));
+        // console.log(reg.exec(str2));
 
-    //统一空格
-    // var str="蓝 色 理   想";
-    // let reg=/\s+/g;
-    // let a=str.replace(reg," ");
-    // console.log(a);
-    
-    //返回全部数字
-    // let str="123456";
-    // let reg=/^\d+$/;
-    // console.log(reg.exec(str));
+        //统一空格
+        // var str="蓝 色 理   想";
+        // let reg=/\s+/g;
+        // let a=str.replace(reg," ");
+        // console.log(a);
 
-    // 电话号码正则 /^\d{3,4}-\d{7,8}(-\d{3,4})?$/
-    
+        //返回全部数字
+        // let str="123456";
+        // let reg=/^\d+$/;
+        // console.log(reg.exec(str));
 
+        // 电话号码正则 /^\d{3,4}-\d{7,8}(-\d{3,4})?$/
+
+
+        checkform = () => {
+            var re;
+            var ss = document.getElementById('txtMobile').value;
+            re = /^(1[358][0-9]{9})$/;
+            if (re.test(ss) == false) {
+                alert("手机号码输入不合法");
+                return false;
+            }
+        }
     </script>
 </body>
+
 </html>
