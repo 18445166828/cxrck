@@ -32,7 +32,7 @@
 
             showIsCheckNo = () => {
                 const {value, isCheckNo} = this.state;
-                const reg = /^1\d{10}$/;
+                const reg = /^([0-9]{3,4}-)?[0-9]{7,8}$|^1\d{10}$/;
                 this.setState({ 
                     isCheckNo:reg.test(value)
                 })
