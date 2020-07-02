@@ -95,7 +95,7 @@ function judeg() {
       }
       break;
     } else {
-      alert('你输了');
+      alert('哈哈哈哈哈你输了');
       break;
     }
   }
