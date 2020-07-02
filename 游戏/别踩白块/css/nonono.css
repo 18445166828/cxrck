@@ -1,0 +1,54 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+.wrapper {
+    width: 400px;
+    height: 520px;
+    border: 1px solid #222;
+    margin: 50px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.box {
+    width: 100%;
+    height: 520px;
+    /* border: 1px solid red; */
+    position: relative;
+    top: -150px;
+}
+
+#play {
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    right: 150px;
+    top: 350px;
+    border: 1px dashed #ccc;
+    text-align: center;
+    border-radius: 8px;
+    background-color: #ff9950;
+}
+
+#play a {
+    line-height: 100px;
+    font-size: 30px;
+}
+
+.rdiv {
+    width: 400px;
+    height: 130px;
+    /* border:1px solid #000; */
+}
+
+.odiv {
+    width: 99px;
+    height: 129px;
+    border-left: 1px solid #222;
+    border-bottom: 1px solid #222;
+    float: left;
+    cursor: pointer;
+}

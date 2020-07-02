@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>跳一跳</title>
+    <link rel="stylesheet" href="../css/jump.css" />
+</head>
+
+<body>
+    <div class="game">
+        <div class="content">
+            <!-- 圆柱体 -->
+            <div class="cylinder">
+                <!-- 顶部 -->
+                <div class="top"></div>
+                <!-- 前面 -->
+                <div class="front"></div>
+                <!-- 底部 -->
+                <div class="bottom"></div>
+            </div>
+        </div>
+        <!-- 跳棋 -->
+        <div id="chess">
+            <div
+                style="width:20px;height:20px;border-radius:50%;background:red;position:absolute;margin-left:13px;z-index: 100;">
+            </div>
+            <div
+                style="width:40px;height:40px;background:blue;overflow: hidden;margin-top: 32px;transform:rotate(67deg) skewX(40deg);">
+            </div>
+        </div>
+        <button id="play">按住它</button>
+    </div>
+</body>
+<script src="../js/jump.js"></script>
+
+</html>

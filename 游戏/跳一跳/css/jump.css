@@ -1,0 +1,265 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.game {
+    position: relative;
+    width: 800px;
+    height: 400px;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+.game .content {
+    position: absolute;
+    width: 700px;
+    height: 400px;
+    left: 0;
+    top: 0;
+}
+
+.game #chess {
+    position: absolute;
+    width: 40px;
+    height: 48px;
+    overflow: hidden;
+    z-index: 99;
+    transition-property: all;
+}
+
+.cylinder {
+    position: relative;
+    width: 70px;
+    height: 101px;
+    float: left;
+}
+
+.cylinder .top {
+    position: absolute;
+    width: 70px;
+    height: 35px;
+    border-radius: 50%;
+    background: yellow;
+    z-index: 4;
+}
+
+.cylinder .front {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: black;
+    margin-top: 17px;
+    z-index: 3;
+}
+
+.cylinder .bottom {
+    position: absolute;
+    width: 70px;
+    height: 35px;
+    border-radius: 50%;
+    background: black;
+    margin-top: 65px;
+    z-index: 4;
+}
+
+button {
+    position: absolute;
+    width: 80px;
+    height: 30px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 20%;
+    bottom: 10px;
+    right: 10px;
+}
+
+.move {
+    animation-name: jump;
+}
+
+/* 跳棋运动动画 */
+@keyframes jump {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    10% {
+        transform: rotate(36deg);
+    }
+
+    20% {
+        transform: rotate(72deg);
+    }
+
+    30% {
+        transform: rotate(108deg);
+    }
+
+    40% {
+        transform: rotate(144deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    60% {
+        transform: rotate(216deg);
+    }
+
+    70% {
+        transform: rotate(252deg);
+    }
+
+    80% {
+        transform: rotate(288deg);
+    }
+
+    90% {
+        transform: rotate(324deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes jump {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    10% {
+        transform: rotate(36deg);
+    }
+
+    20% {
+        transform: rotate(72deg);
+    }
+
+    30% {
+        transform: rotate(108deg);
+    }
+
+    40% {
+        transform: rotate(144deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    60% {
+        transform: rotate(216deg);
+    }
+
+    70% {
+        transform: rotate(252deg);
+    }
+
+    80% {
+        transform: rotate(288deg);
+    }
+
+    90% {
+        transform: rotate(324deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes jump {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    10% {
+        transform: rotate(36deg);
+    }
+
+    20% {
+        transform: rotate(72deg);
+    }
+
+    30% {
+        transform: rotate(108deg);
+    }
+
+    40% {
+        transform: rotate(144deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    60% {
+        transform: rotate(216deg);
+    }
+
+    70% {
+        transform: rotate(252deg);
+    }
+
+    80% {
+        transform: rotate(288deg);
+    }
+
+    90% {
+        transform: rotate(324deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes jump {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    10% {
+        transform: rotate(36deg);
+    }
+
+    20% {
+        transform: rotate(72deg);
+    }
+
+    30% {
+        transform: rotate(108deg);
+    }
+
+    40% {
+        transform: rotate(144deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    60% {
+        transform: rotate(216deg);
+    }
+
+    70% {
+        transform: rotate(252deg);
+    }
+
+    80% {
+        transform: rotate(288deg);
+    }
+
+    90% {
+        transform: rotate(324deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
