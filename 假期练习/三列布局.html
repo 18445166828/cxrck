@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>三列布局</title>
+    <style>
+    .box{
+        height: 500px;
+        background-color: bisque;
+        /* position: relative; */
+    }
+    .box .box-content {
+        height: 100%;
+        float: left; /* 一定要设置浮动，要不下面的模块上不来 */
+        width:100%;/* 一定要设置100%，要不内容不够称不开整个页面 */
+        background-color: blue; 
+        /* 默认还是整行 */
+        } 
+    .box .box-content .child {
+        margin: 0 210px;
+            /* 中间模块空出左右距离，设置浮动 */
+        background: red;
+        height: 100%;
+    }
+    .box .box-left { 
+        width: 200px; float: left; 
+         margin-left: -100%;/*v 设置浮动， margin-left:-100% 可以使元素往上移一行，并且移动到最左边  */
+        height: 300px; 
+        background-color: green; 
+        } 
+    .box .box-right { 
+        float: right; 
+        width: 200px; 
+        margin-left: -100%;
+        /* min-height: 100%;  */
+        /* margin-left: -200px;设置浮动， margin-left:负的自身宽度 可以使元素往上移一行，并且移动到最右边  */
+        background-color: pink; 
+        } 
+    /* header,footer { height: 75px; background-color: aqua; }  */
+</style> 
+</head>
+<body> 
+    <header> </header> 
+    <div class="box"> 
+        <div class="box-content">
+            <div class="child">
+                中间主题内容
+            </div>
+        </div>
+        <div class="box-left">
+            11dsdasdas不你弟弟呢单独
+        </div>
+        <div class="box-right">
+            12酷酷酷酷酷的的是计算机技术升级的历史记录
+        </div> 
+    </div>
+    <footer>
+
+    </footer>
+</body>
+</html>
