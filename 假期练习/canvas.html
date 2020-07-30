@@ -15,7 +15,7 @@
     }
 
 </style>
-<canvas id="mycanvas"></canvas>
+<canvas id="mycanvas" width="300" height="200"></canvas>
 
 <body>
     <script>
@@ -24,16 +24,12 @@
         //获取画笔
         const ctx = mycanvas.getContext('2d');
         console.log(ctx);
-        // function foo(n) {
-        //     while() {
-        //         if (n / 2 != 1) {
-        //             i = n / 2; //爱丽丝
-        //             j = i / 2; //鲍勃
-        //         } else {
 
-        //         }
-        //     }
-        // }
+        ctx.beginPath();
+        ctx.arc(150,100,50,0,Math.PI*2,false);
+        ctx.closePath();
+        ctx.fillStyle = 'orange'
+        ctx.fill()
 
     </script>
 </body>

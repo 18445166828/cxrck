@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //第一种方法
+    // function findKthLargest(arr,k){
+    //     arr.sort((a,b)=>b-a);
+    //     return arr[k-1];
+    // }
+    // console.log(findKthLargest([3,2,1,5,6,4],2));
+      
+        //第二种方法 冒泡排序
+        function findKthLargest(arr,k){
+        for(var i=arr.length-1;i>=arr.length-k;i--){
+            for(var j=0;j<=i;j++){
+                if(arr[j]>arr[j+1]){
+                    [arr[j],arr[j+1]]=[arr[j+1],arr[j]];
+                }
+            }
+        }
+        return arr[arr.length-k];
+    }
+    console.log(findKthLargest([3,2,1,5,6,4],2));
+    
+    
+    </script>
+</body>
+</html>

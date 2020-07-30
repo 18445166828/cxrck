@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        new Promise(function(resolve,reject){
+               var res = "res";
+                // resolve(res);
+                reject()
+        
+        }).then(function(res){
+            console.log("成功",res);
+        }).catch(function(){
+            console.log("失败");
+        })
+        // let a = new Promise(function(resolve,reject){
+        //        var res = "res1";
+        //        resolve(res)
+        // })
+        // let b = new Promise(function(resolve,reject){
+        //     var res = "res2"
+        //     resolve(res)
+        // })
+        // let c = new Promise(function(resolve,reject){
+        //     var res = "res3"
+        //     reject();
+        // })
+        // Promise.all([a,b,c]).then(function(){
+        //     console.log("成功");  
+        // }).catch(function(){
+        //     console.log("失败");
+        // })
+    </script>
+</body>
+</html>
